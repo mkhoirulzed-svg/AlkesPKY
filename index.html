@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -71,6 +72,28 @@ h1{margin:0;font-size:24px}
   text-decoration:none
 }
 footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
+
+/* Tambahan baru */
+#searchBox {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 2px solid #d1d5db;
+  font-size: 14px;
+}
+.nav-buttons button {
+  margin: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #e5e7eb;
+}
+.nav-buttons button.active {
+  background: var(--primary);
+  color: #fff;
+}
 </style>
 </head>
 
@@ -91,10 +114,22 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
     <a href="https://shopee.co.id/muhammadkhoirulzed" class="social-btn shop">Shopee</a>
   </div>
 
+  <!-- 🔍 FITUR PENCARIAN (BARU DITAMBAHKAN) -->
+  <input type="text" id="searchBox" placeholder="Cari produk..." oninput="searchProduk()">
+
   <!-- ETALASE -->
   <div class="section-title">Produk Pilihan Teratas</div>
   <div class="products" id="etalase"></div>
+
+  <!-- PAGINATION ANGKA -->
   <div id="pagination" style="margin-top:16px;text-align:center"></div>
+
+  <!-- NEXT / PREVIOUS BUTTON -->
+  <div class="nav-buttons" style="text-align:center;margin-top:10px;">
+    <button onclick="prevPage()">Previous</button>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
 </div>
 
 <footer>© 2025 Alkes PKY</footer>
@@ -106,18 +141,37 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
 
 <!-- RENDER ETALASE (WA AUTO TEXT) -->
 <script>
+let filteredData = produkShopee; // untuk pencarian
 const etalase = document.getElementById("etalase");
 const pagination = document.getElementById("pagination");
 
 const ITEMS_PER_PAGE = 4;
 let currentPage = 1;
 
+// =========================
+//   🔍 Fitur Pencarian
+// =========================
+function searchProduk() {
+  const keyword = document.getElementById("searchBox").value.toLowerCase();
+
+  filteredData = produkShopee.filter(p =>
+    p.nama.toLowerCase().includes(keyword)
+  );
+
+  currentPage = 1;
+  renderProduk(currentPage);
+}
+
+// =========================
+//   Render Produk
+// =========================
 function renderProduk(page) {
   etalase.innerHTML = "";
 
   const start = (page - 1) * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
-  const data = produkShopee.slice(start, end);
+
+  const data = filteredData.slice(start, end);
 
   data.forEach(p => {
     etalase.innerHTML += `
@@ -135,9 +189,12 @@ function renderProduk(page) {
   renderPagination();
 }
 
+// =========================
+//   Pagination Angka
+// =========================
 function renderPagination() {
   pagination.innerHTML = "";
-  const totalPage = Math.ceil(produkShopee.length / ITEMS_PER_PAGE);
+  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
   for (let i = 1; i <= totalPage; i++) {
     pagination.innerHTML += `
@@ -162,10 +219,27 @@ function gotoPage(page) {
   renderProduk(currentPage);
 }
 
+// =========================
+//   Next & Previous
+// =========================
+function nextPage() {
+  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+  if (currentPage < totalPage) {
+    currentPage++;
+    renderProduk(currentPage);
+  }
+}
+
+function prevPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    renderProduk(currentPage);
+  }
+}
+
 // render pertama
 renderProduk(currentPage);
 </script>
-
 
 </body>
 </html>
