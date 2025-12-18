@@ -1,4 +1,3 @@
-<script>
 const produkShopee = [
   {
     nama: "Tensimeter Digital",
@@ -16,4 +15,3 @@ const produkShopee = [
     gambar: "https://cf.shopee.co.id/file/zzzz.jpg"
   }
 ];
-</script>
