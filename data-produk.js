@@ -56,7 +56,7 @@ const produkShopee = [
   { nama: "Test Pack - Onemed", harga: "Rp 5.000", gambar: "logo.png" },
   { nama: "I.V. Catheter No 22 - GEA", harga: "Rp 8.500", gambar: "logo.png" },
   { nama: "Pulse Oximeter", harga: "Rp 57.000", gambar: "logo.png" },
-  { nama: "Mesin Nebulizer - Upheal", harga: "Rp 76.500", gambar: "logo.png" },
+  { nama: "Mesin Nebulizer - Upheal", harga8: "Rp 76.500", gambar: "logo.png" },
   { nama: "Celana Sunat", harga: "Rp 15.000", gambar: "logo.png" },
   { nama: "Tensimeter pergelangan - Omicron", harga: "Rp 120.000", gambar: "logo.png" },
   { nama: "Kasa hidrofik 16x16 - Narita", harga: "Rp 5.000", gambar: "logo.png" },
