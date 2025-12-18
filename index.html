@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alkes PKY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#0f766e;
+  --wa:#22c55e;
+  --ig:#d62976;
+  --shop:#ee4d2d;
+  --bg:#f0fdfa;
+}
+*{box-sizing:border-box;font-family:Inter,sans-serif}
+body{margin:0;background:var(--bg);display:flex;justify-content:center}
+.container{max-width:420px;width:100%;padding:20px}
+.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.header{text-align:center}
+.logo{width:110px;margin-bottom:8px}
+h1{margin:0;font-size:24px}
+.motto{font-size:14px;color:#6b7280}
+
+.social-links{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:18px
+}
+.social-btn{
+  padding:12px 6px;
+  border-radius:14px;
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px
+}
+.social-btn svg{width:22px;height:22px}
+.wa{background:var(--wa)}
+.ig{background:var(--ig)}
+.shop{background:var(--shop)}
+
+.section-title{margin:24px 0 14px;font-size:18px;font-weight:700}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.product{background:#fff;border-radius:14px;padding:10px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
+.product img{width:100%;height:120px;object-fit:cover;border-radius:10px}
+.name{font-size:13px;font-weight:600;margin-top:6px}
+.price{font-size:14px;color:var(--primary);font-weight:700}
+.ask{
+  display:block;
+  margin-top:6px;
+  padding:8px;
+  background:var(--primary);
+  color:#fff;
+  border-radius:10px;
+  text-align:center;
+  font-size:12px;
+  text-decoration:none
+}
+footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="card">
+  <div class="header">
+    <img src="logo.png" class="logo">
+    <h1>Alkes PKY</h1>
+    <div class="motto">Sahabat Kesehatan Anda</div>
+  </div>
+
+  <!-- LINK SEJAJAR -->
+  <div class="social-links">
+    <a href="https://wa.me/628XXXXXXXXXX" class="social-btn wa">WhatsApp</a>
+    <a href="https://instagram.com/usernamekamu" class="social-btn ig">Instagram</a>
+    <a href="https://shopee.co.id/tokokamu" class="social-btn shop">Shopee</a>
+  </div>
+
+  <!-- ETALASE -->
+  <div class="section-title">Produk Pilihan</div>
+  <div class="products" id="etalase"></div>
+</div>
+
+<footer>© 2025 Alkes PKY</footer>
+
+</div>
+
+<!-- DATA PRODUK -->
+<script src="data-produk.js"></script>
+
+<!-- RENDER ETALASE (WA AUTO TEXT) -->
+<script>
+const etalase = document.getElementById("etalase");
+
+produkShopee.forEach(p => {
+  etalase.innerHTML += `
+    <div class="product">
+      <img src="${p.gambar}">
+      <div class="name">${p.nama}</div>
+      <div class="price">${p.harga}</div>
+      <a class="ask"
+         href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama)}%22">
+         Tanya Barang
+      </a>
+    </div>`;
+});
+</script>
+
+</body>
+</html>
