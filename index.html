@@ -94,6 +94,7 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
   <!-- ETALASE -->
   <div class="section-title">Produk Pilihan Teratas</div>
   <div class="products" id="etalase"></div>
+  <div id="pagination" style="margin-top:16px;text-align:center"></div>
 </div>
 
 <footer>© 2025 Alkes PKY</footer>
@@ -106,20 +107,65 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
 <!-- RENDER ETALASE (WA AUTO TEXT) -->
 <script>
 const etalase = document.getElementById("etalase");
+const pagination = document.getElementById("pagination");
 
-produkShopee.forEach(p => {
-  etalase.innerHTML += `
-    <div class="product">
-      <img src="${p.gambar}">
-      <div class="name">${p.nama}</div>
-      <div class="price">${p.harga}</div>
-      <a class="ask"
-         href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama)}%22">
-         Tanya Barang ini
-      </a>
-    </div>`;
-});
+const ITEMS_PER_PAGE = 6;
+let currentPage = 1;
+
+function renderProduk(page) {
+  etalase.innerHTML = "";
+
+  const start = (page - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  const data = produkShopee.slice(start, end);
+
+  data.forEach(p => {
+    etalase.innerHTML += `
+      <div class="product">
+        <img src="${p.gambar}">
+        <div class="name">${p.nama}</div>
+        <div class="price">${p.harga}</div>
+        <a class="ask"
+           href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama)}%22">
+           Tanya Barang ini
+        </a>
+      </div>`;
+  });
+
+  renderPagination();
+}
+
+function renderPagination() {
+  pagination.innerHTML = "";
+  const totalPage = Math.ceil(produkShopee.length / ITEMS_PER_PAGE);
+
+  for (let i = 1; i <= totalPage; i++) {
+    pagination.innerHTML += `
+      <button onclick="gotoPage(${i})"
+        style="
+          margin:4px;
+          padding:6px 12px;
+          border-radius:8px;
+          border:none;
+          cursor:pointer;
+          font-weight:600;
+          background:${i === currentPage ? '#0f766e' : '#e5e7eb'};
+          color:${i === currentPage ? '#fff' : '#374151'};
+        ">
+        ${i}
+      </button>`;
+  }
+}
+
+function gotoPage(page) {
+  currentPage = page;
+  renderProduk(currentPage);
+}
+
+// render pertama
+renderProduk(currentPage);
 </script>
+
 
 </body>
 </html>
