@@ -39,7 +39,6 @@ const produkShopee = [
     harga: "Rp 55.000",
     gambar: "https://down-id.img.susercontent.com/file/id-11134207-7ras8-m62e7pp4jwg603@resize_w900_nl.webp"
   },
-[
   { nama: "Termometer digital - Thermoone", harga: "Rp 20.000", gambar: "logo.png" },
   { nama: "Cek gula darah - Sinoheart", harga: "Rp 50.000", gambar: "logo.png" },
   { nama: "Alcohol swab - Onemed", harga: "Rp 15.000", gambar: "logo.png" },
