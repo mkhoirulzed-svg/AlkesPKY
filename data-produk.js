@@ -43,7 +43,6 @@ const produkShopee = [
 { nama: "Wash gloves - T-Towel", harga: "15000", gambar: "https://down-id.img.susercontent.com/file/sg-11134201-22090-au648mnwu2hv0c.webp" },
 { nama: "Alkohol 70% 100ml - Onemed", harga: "10000", gambar: "https://down-id.img.susercontent.com/file/id-11134207-8224x-mi1edow15sebc2.webp" },
 { nama: "Alcohol swab  - onemed", harga: "15000", gambar: "https://down-id.img.susercontent.com/file/id-11134207-8224x-mi1edow15sebc2@resize_w900_nl.webp" },
-{ nama: "", harga: "", gambar: "" },
 { nama: "Tensimeter digital - Omicron", harga: "90000", gambar: "https://down-id.img.susercontent.com/file/id-11134207-8224p-migswonaolc32b.webp" },
 { nama: "Strip glucosa 25 - sinoheart", harga: "65000", gambar: "https://down-id.img.susercontent.com/file/id-11134207-81ztg-mfiub6rv76kse6.webp" },
 { nama: "kasur decubitus - Onemed", harga: "400000", gambar: "https://down-id.img.susercontent.com/file/id-11134207-8224w-migu69ca2r5t68@resize_w900_nl.webp" },
