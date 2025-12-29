@@ -109,6 +109,18 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
   background:#e5e7eb;
   color:#0f766e;
 }
+.install-btn{
+  width:100%;
+  margin-top:14px;
+  padding:12px;
+  border-radius:14px;
+  border:none;
+  background:#0f766e;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
 
 </style>
 </head>
@@ -143,6 +155,10 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
      Shopee
   </a>
 </div>
+
+  <button id="installBtn" class="install-btn" style="display:none">
+  📲 Install Alkes PKY
+</button>
 
 
   <!-- ETALASE -->
@@ -299,6 +315,32 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', 'PIXEL_ID_KAMU');
 fbq('track', 'PageView');
 </script>
+
+  <script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = "block";
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+
+  if (outcome === "accepted") {
+    console.log("User installed PWA");
+  }
+
+  deferredPrompt = null;
+  installBtn.style.display = "none";
+});
+</script>
+
 <noscript>
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1178846664425406&ev=PageView&noscript=1"/>
