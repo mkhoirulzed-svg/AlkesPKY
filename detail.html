@@ -114,19 +114,44 @@ if (!produk) {
     <a class="btn home" href="index.html">← Kembali ke Home</a>
   `;
 } else {
+
+  // =========================
+  // NORMALISASI STATUS (HARUS DI ATAS)
+  // =========================
+  const rawStatus = (produk.status || "").toLowerCase();
+
+  let statusClass = "habis";
+  let statusText  = "Tidak Tersedia";
+
+  if (
+    rawStatus.includes("tersedia") ||
+    rawStatus.includes("ready")
+  ) {
+    statusClass = "tersedia";
+    statusText  = "Tersedia";
+  } else if (
+    rawStatus.includes("restok") ||
+    rawStatus.includes("proses")
+  ) {
+    statusClass = "habis";
+    statusText  = "Proses Restok";
+  }
+
+  // =========================
+  // RENDER HTML (SETELAH STATUS SIAP)
+  // =========================
   card.innerHTML = `
     <img src="${produk.gambar}" class="product-img">
 
     <h1>${produk.nama}</h1>
-    <div class="price">Rp ${produk.harga}</div>
+    <div class="price">${produk.harga}</div>
 
-   <div class="status ${statusClass}">
-  ${statusText}
-</div>
+    <div class="status ${statusClass}">
+      ${statusText}
+    </div>
 
     <div class="desc">${produk.deskripsi}</div>
 
-    <!-- WA TETAP AKTIF MESKI STOK HABIS -->
     <a class="btn wa"
        href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20produk%20${encodeURIComponent(produk.nama)}">
        Tanya via WhatsApp
@@ -135,27 +160,8 @@ if (!produk) {
     <a class="btn home" href="index.html">← Kembali ke Home</a>
   `;
 }
-
-  const rawStatus = (produk.status || "").toLowerCase();
-
-let statusClass = "habis";
-let statusText  = "Tidak Tersedia";
-
-if (
-  rawStatus.includes("tersedia") ||
-  rawStatus.includes("ready")
-) {
-  statusClass = "tersedia";
-  statusText  = "Tersedia";
-} else if (
-  rawStatus.includes("restok") ||
-  rawStatus.includes("proses")
-) {
-  statusClass = "habis";
-  statusText  = "Proses Restok";
-}
-
 </script>
+
 
 </body>
 </html>
