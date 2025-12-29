@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Detail Produk | Alkes PKY</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="./logo.png">
+<link rel="apple-touch-icon" href="./logo.png">
+<meta name="theme-color" content="#0f766e">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#0f766e;
+  --bg:#f0fdfa;
+}
+*{box-sizing:border-box;font-family:Inter,sans-serif}
+body{margin:0;background:var(--bg);display:flex;justify-content:center}
+.container{max-width:420px;width:100%;padding:20px}
+.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+
+.header{text-align:center}
+.logo{width:100px;margin-bottom:6px}
+h1{font-size:20px;margin:6px 0}
+.price{font-size:18px;color:var(--primary);font-weight:700}
+
+img.product-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+
+.desc{font-size:14px;color:#374151;margin-top:10px}
+
+.status{
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:600;
+}
+.tersedia{background:#dcfce7;color:#166534}
+.habis{background:#fee2e2;color:#991b1b}
+
+.btn{
+  display:block;
+  margin-top:12px;
+  padding:10px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:600;
+  text-decoration:none;
+}
+.wa{background:#22c55e;color:#fff}
+.home{background:#e5e7eb;color:#0f766e}
+
+.search{
+  width:100%;
+  padding:10px 14px;
+  border-radius:12px;
+  border:2px solid #d1d5db;
+  font-size:14px;
+  margin-top:14px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="card" id="detailCard"></div>
+
+</div>
+
+<!-- DATA PRODUK -->
+<script src="./data-produk.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const produk = produkShopee.find(p => p.id === id);
+const card = document.getElementById("detailCard");
+
+if (!produk) {
+  card.innerHTML = `
+    <p>Produk tidak ditemukan.</p>
+    <a class="btn home" href="index.html">Kembali ke Home</a>
+  `;
+} else {
+  card.innerHTML = `
+    <div class="header">
+      <img src="./logo.png" class="logo">
+    </div>
+
+    <img src="${produk.gambar}" class="product-img">
+
+    <h1>${produk.nama}</h1>
+    <div class="price">Rp ${produk.harga}</div>
+
+    <div class="status ${produk.status}">
+      ${produk.status === "tersedia" ? "Tersedia" : "Tidak Tersedia"}
+    </div>
+
+    <div class="desc">${produk.deskripsi}</div>
+
+    ${
+      produk.status === "tersedia"
+      ? `<a class="btn wa"
+           href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20memesan%20${encodeURIComponent(produk.nama)}">
+           Pesan via WhatsApp
+         </a>`
+      : `<div class="btn wa" style="background:#9ca3af;pointer-events:none">
+           Stok Habis
+         </div>`
+    }
+
+    <a class="btn home" href="index.html">← Kembali ke Home</a>
+
+    <!-- 🔍 SEARCH (redirect ke index) -->
+    <input class="search"
+      placeholder="Cari produk lain..."
+      onkeydown="if(event.key==='Enter'){window.location='index.html?search='+this.value}">
+  `;
+}
+</script>
+
+</body>
+</html>
