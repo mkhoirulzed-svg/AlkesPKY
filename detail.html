@@ -125,9 +125,20 @@ img.product-img{
   gap:6px
 }
 .social-btn svg{width:22px;height:22px}
-.wa{background:#22c55e}
+.social-wa{background:#22c55e}
 .ig{background:#d62976}
 .shop{background:#ee4d2d}
+.ask{
+  display:block;
+  margin-top:6px;
+  padding:8px;
+  background:var(--primary);
+  color:#fff;
+  border-radius:10px;
+  text-align:center;
+  font-size:12px;
+  text-decoration:none
+}
 
 </style>
 </head>
@@ -145,7 +156,7 @@ img.product-img{
   </div>
 <div class="social-links">
   <a href="https://wa.me/6282253124745"
-     class="social-btn wa"
+     class="social-btn social-wa"
      onclick="fbq('track','Lead',{source:'whatsapp_header'})">
      WhatsApp
   </a>
