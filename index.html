@@ -105,6 +105,11 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
   background: var(--primary);
   color: #fff;
 }
+  .detail {
+  background:#e5e7eb;
+  color:#0f766e;
+}
+
 </style>
 </head>
 
@@ -199,23 +204,31 @@ function renderProduk(page) {
 
   const data = filteredData.slice(start, end);
 
-  data.forEach(p => {
-    etalase.innerHTML += `
-      <div class="product">
-        <img src="${p.gambar}">
-        <div class="name">${p.nama}</div>
-        <div class="price">${p.harga}</div>
-       <a class="ask"
-   href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama)}%22"
-   onclick="fbq('track','Lead',{
-     product:'${p.nama}',
-     price:'${p.harga}'
-   })">
-   Tanya Barang ini
+ data.forEach(p => {
+  etalase.innerHTML += `
+    <div class="product">
+      <img src="${p.gambar}">
+      <div class="name">${p.nama}</div>
+      <div class="price">${p.harga}</div>
+
+      <!-- DETAIL PRODUK -->
+     <a class="ask detail" href="detail.html?id=${p.id}">
+  Detail Produk
 </a>
 
-      </div>`;
-  });
+
+      <!-- TANYA VIA WA -->
+      <a class="ask"
+         href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama)}%22"
+         onclick="fbq('track','Lead',{
+           product:'${p.nama}',
+           price:'${p.harga}'
+         })">
+         Tanya Barang ini
+      </a>
+    </div>`;
+});
+
 
   renderPagination();
 }
