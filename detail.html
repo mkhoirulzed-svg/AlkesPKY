@@ -140,6 +140,35 @@ img.product-img{
   text-decoration:none
 }
 
+
+
+.share-title{
+  margin-top:18px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.share-buttons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:10px;
+}
+
+.share-btn{
+  padding:10px 6px;
+  border-radius:12px;
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  text-align:center;
+  text-decoration:none;
+}
+
+.share-wa{background:#22c55e}
+.share-fb{background:#1877f2}
+.share-ig{background:#d62976}
+
 </style>
 </head>
 
@@ -242,6 +271,13 @@ if (!produk) {
     </div>
 
     <div class="desc">${produk.deskripsi}</div>
+<div class="share-title">Bagikan Produk</div>
+
+<div class="share-buttons">
+  <a class="share-btn share-wa" id="shareWA">WhatsApp</a>
+  <a class="share-btn share-fb" id="shareFB">Facebook</a>
+  <a class="share-btn share-ig" id="shareIG">Instagram</a>
+</div>
 
     <a class="btn wa"
        href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20produk%20${encodeURIComponent(produk.nama)}">
@@ -297,6 +333,25 @@ related.forEach(p => {
     </div>
   `;
 });
+
+
+const urlProduk = window.location.href;
+const textProduk = `Cek produk ${produk.nama} di Alkes PKY 👇`;
+
+// WhatsApp
+document.getElementById("shareWA").href =
+  `https://wa.me/?text=${encodeURIComponent(textProduk + " " + urlProduk)}`;
+
+// Facebook
+document.getElementById("shareFB").href =
+  `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlProduk)}`;
+
+// Instagram (tidak bisa direct share link)
+document.getElementById("shareIG").onclick = () => {
+  navigator.clipboard.writeText(urlProduk);
+  alert("Link produk disalin! Tempelkan di Instagram Story atau DM 📋");
+};
+
 </script>
 
 
