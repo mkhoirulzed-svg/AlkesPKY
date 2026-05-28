@@ -470,7 +470,7 @@ function normalizeStatus(status){
 }
 
 function renderDetail(produk){
-  const status = normalizeStatus(produk.status);
+  const status = normalizeStatus(produk.keterangan);
 
   card.innerHTML = `
     <div class="detail-layout">
