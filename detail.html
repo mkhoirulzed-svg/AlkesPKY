@@ -445,28 +445,44 @@ const relatedBox = document.getElementById("relatedProducts");
 
 let produkShopee = [];
 
-function normalizeStatus(status){
-  const rawStatus = (status || "").toLowerCase();
+function normalizeStatus(keterangan){
 
-  let statusClass = "habis";
-  let statusText  = "Tidak Tersedia";
+  const raw =
+    String(keterangan || "")
+    .toLowerCase()
+    .trim();
 
+  // PRIORITAS: TIDAK TERSEDIA
   if(
-    rawStatus.includes("tersedia") ||
-    rawStatus.includes("ready") ||
-    rawStatus.includes("ada")
+    raw.includes("tidak tersedia") ||
+    raw.includes("habis") ||
+    raw.includes("kosong") ||
+    raw.includes("sold out")
   ){
-    statusClass = "tersedia";
-    statusText  = "Tersedia";
-  }else if(
-    rawStatus.includes("restok") ||
-    rawStatus.includes("proses")
-  ){
-    statusClass = "habis";
-    statusText = "Proses Restok";
+    return {
+      statusClass:"habis",
+      statusText:"Tidak Tersedia"
+    };
   }
 
-  return { statusClass, statusText };
+  // PROSES RESTOK
+  if(
+    raw.includes("restok") ||
+    raw.includes("pre order") ||
+    raw.includes("po") ||
+    raw.includes("proses")
+  ){
+    return {
+      statusClass:"habis",
+      statusText:"Proses Restok"
+    };
+  }
+
+  // DEFAULT TERSEDIA
+  return {
+    statusClass:"tersedia",
+    statusText:"Tersedia"
+  };
 }
 
 function renderDetail(produk){
