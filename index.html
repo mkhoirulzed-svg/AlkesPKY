@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,57 +5,88 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5SBQCD2XR"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z5SBQCD2XR');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Z5SBQCD2XR');
 </script>
 
-  
-  <!-- FAVICON -->
 <link rel="icon" type="image/png" href="./logo.png">
 <link rel="apple-touch-icon" href="./logo.png">
 <meta name="theme-color" content="#0f766e">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 <title>Alkes PKY</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --primary:#0f766e;
   --wa:#22c55e;
   --ig:#d62976;
   --shop:#ee4d2d;
   --bg:#f0fdfa;
 }
-*{box-sizing:border-box;font-family:Inter,sans-serif}
-body{margin:0;background:var(--bg);display:flex;justify-content:center}
-.container{max-width:420px;width:100%;padding:20px}
-.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.header{text-align:center}
-.logo{width:110px;margin-bottom:8px}
-h1{margin:0;font-size:24px}
-.motto{font-size:14px;color:#6b7280}
+
+*{
+  box-sizing:border-box;
+  font-family:Inter,sans-serif;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  display:flex;
+  justify-content:center;
+}
+
+.container{
+  max-width:420px;
+  width:100%;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.header{
+  text-align:center;
+}
+
+.logo{
+  width:110px;
+  margin-bottom:8px;
+}
+
+h1{
+  margin:0;
+  font-size:24px;
+}
+
+.motto{
+  font-size:14px;
+  color:#6b7280;
+}
 
 .social-links{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
-  margin-top:18px
+  margin-top:18px;
 }
 
 @font-face {
   font-family: 'Archicoco';
   src: url('./Archicoco.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
-  
+
 .social-btn{
   padding:12px 6px;
   border-radius:14px;
@@ -67,19 +97,57 @@ h1{margin:0;font-size:24px}
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:6px
+  gap:6px;
 }
-.social-btn svg{width:22px;height:22px}
-.wa{background:var(--wa)}
-.ig{background:var(--ig)}
-.shop{background:var(--shop)}
 
-.section-title{margin:24px 0 14px;font-size:18px;font-weight:700}
-.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.product{background:#fff;border-radius:14px;padding:10px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
-.product img{width:100%;height:120px;object-fit:cover;border-radius:10px}
-.name{font-size:13px;font-weight:600;margin-top:6px}
-.price{font-size:14px;color:var(--primary);font-weight:700}
+.wa{background:var(--wa);}
+.ig{background:var(--ig);}
+.shop{background:var(--shop);}
+
+.section-title{
+  margin:24px 0 14px;
+  font-size:18px;
+  font-weight:700;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.product{
+  background:#fff;
+  border-radius:14px;
+  padding:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+}
+
+.product img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.name{
+  font-size:13px;
+  font-weight:600;
+  margin-top:6px;
+}
+
+.price{
+  font-size:14px;
+  color:var(--primary);
+  font-weight:700;
+}
+
+.keterangan{
+  font-size:11px;
+  color:#6b7280;
+  margin-top:4px;
+}
+
 .ask{
   display:block;
   margin-top:6px;
@@ -89,36 +157,40 @@ h1{margin:0;font-size:24px}
   border-radius:10px;
   text-align:center;
   font-size:12px;
-  text-decoration:none
+  text-decoration:none;
 }
-footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
 
-/* Tambahan baru */
-#searchBox {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 2px solid #d1d5db;
-  font-size: 14px;
-  margin-top:16px;
-}
-.nav-buttons button {
-  margin: 6px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  background: #e5e7eb;
-}
-.nav-buttons button.active {
-  background: var(--primary);
-  color: #fff;
-}
-  .detail {
+.detail{
   background:#e5e7eb;
   color:#0f766e;
 }
+
+footer{
+  text-align:center;
+  font-size:12px;
+  margin-top:18px;
+  color:#9ca3af;
+}
+
+#searchBox{
+  width:100%;
+  padding:10px 14px;
+  border-radius:12px;
+  border:2px solid #d1d5db;
+  font-size:14px;
+  margin-top:16px;
+}
+
+.nav-buttons button{
+  margin:6px;
+  padding:8px 14px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  background:#e5e7eb;
+}
+
 .install-btn{
   width:100%;
   margin-top:14px;
@@ -131,233 +203,282 @@ footer{text-align:center;font-size:12px;margin-top:18px;color:#9ca3af}
   font-weight:700;
   cursor:pointer;
 }
-
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <div class="card">
-  <div class="header">
-    <img src="./logo.png" class="logo">
-   <h1 style="font-family: 'Archicoco'; color: #4daced;">
-  Alkes PKY
+
+<div class="header">
+<img src="./logo.png" class="logo">
+
+<h1 style="font-family:'Archicoco';color:#4daced;">
+Alkes PKY
 </h1>
-    <div class="motto">Sahabat Kesehatan Anda</div>
-  </div>
 
-  <!-- LINK SEJAJAR -->
- <div class="social-links">
-  <a href="https://wa.me/6282253124745"
-     class="social-btn wa"
-     onclick="fbq('track','Lead',{source:'whatsapp_header'})">
-     WhatsApp
-  </a>
-
-  <a href="https://www.instagram.com/alkes_pky/"
-     class="social-btn ig"
-     onclick="fbq('track','Lead',{source:'instagram'})">
-     Instagram
-  </a>
-
-  <a href="https://shopee.co.id/muhammadkhoirulzed"
-     class="social-btn shop"
-     onclick="fbq('track','Lead',{source:'shopee'})">
-     Shopee
-  </a>
+<div class="motto">
+Sahabat Kesehatan Anda
+</div>
 </div>
 
-  <button id="installBtn" class="install-btn" style="display:none">
-  📲 Install Alkes PKY
+<div class="social-links">
+
+<a href="https://wa.me/6282253124745"
+class="social-btn wa">
+WhatsApp
+</a>
+
+<a href="https://www.instagram.com/alkes_pky/"
+class="social-btn ig">
+Instagram
+</a>
+
+<a href="https://shopee.co.id/muhammadkhoirulzed"
+class="social-btn shop">
+Shopee
+</a>
+
+</div>
+
+<button id="installBtn"
+class="install-btn"
+style="display:none">
+📲 Install Alkes PKY
 </button>
 
- <!-- 🔍 FITUR PENCARIAN (BARU DITAMBAHKAN) -->
-  <input type="text" id="searchBox" placeholder="Cari produk..." oninput="searchProduk()">
+<input
+type="text"
+id="searchBox"
+placeholder="Cari produk..."
+oninput="searchProduk()">
 
+<div class="section-title">
+Produk Pilihan Teratas
+</div>
 
-  <!-- ETALASE -->
-  <div class="section-title">Produk Pilihan Teratas</div>
-  <div class="products" id="etalase"></div>
+<div class="products" id="etalase"></div>
 
- 
-  <!-- PAGINATION ANGKA -->
-  <div id="pagination" style="margin-top:16px;text-align:center"></div>
+<div id="pagination"
+style="margin-top:16px;text-align:center">
+</div>
 
-  <!-- NEXT / PREVIOUS BUTTON -->
-  <div class="nav-buttons" style="text-align:center;margin-top:10px;">
-    <button onclick="prevPage()">Previous</button>
-    <button onclick="nextPage()">Next</button>
-  </div>
+<div class="nav-buttons"
+style="text-align:center;margin-top:10px;">
+
+<button onclick="prevPage()">
+Previous
+</button>
+
+<button onclick="nextPage()">
+Next
+</button>
 
 </div>
 
-<footer>© 2025 Alkes PKY</footer>
+</div>
+
+<footer>
+© 2025 Alkes PKY
+</footer>
 
 </div>
 
-<!-- DATA PRODUK -->
-<script src="./data-produk.js"></script>
-
-<!-- RENDER ETALASE (WA AUTO TEXT) -->
 <script>
-let filteredData = produkShopee; // untuk pencarian
-const etalase = document.getElementById("etalase");
-const pagination = document.getElementById("pagination");
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbz3XTARB3Vd1pANXA5MZ1KqbquHLRC4eO3K6uZENRxfjtvnE1Nb7gv0AHEkxqDxyejGtA/exec";
+
+let produkShopee = [];
+let filteredData = [];
+
+const etalase =
+document.getElementById("etalase");
+
+const pagination =
+document.getElementById("pagination");
 
 const ITEMS_PER_PAGE = 8;
+
 let currentPage = 1;
 
-// =========================
-//   🔍 Fitur Pencarian
-// =========================
-function searchProduk() {
-  const keyword = document.getElementById("searchBox").value.toLowerCase();
+function searchProduk(){
 
-  filteredData = produkShopee.filter(p =>
-    p.nama.toLowerCase().includes(keyword)
+  const keyword =
+  document.getElementById("searchBox")
+  .value
+  .toLowerCase();
+
+  filteredData =
+  produkShopee.filter(p =>
+    (p.nama || "")
+    .toLowerCase()
+    .includes(keyword)
   );
 
   currentPage = 1;
+
   renderProduk(currentPage);
 }
 
-// =========================
-//   Render Produk
-// =========================
-function renderProduk(page) {
+function renderProduk(page){
+
   etalase.innerHTML = "";
 
-  const start = (page - 1) * ITEMS_PER_PAGE;
-  const end = start + ITEMS_PER_PAGE;
+  const start =
+  (page - 1) * ITEMS_PER_PAGE;
 
-  const data = filteredData.slice(start, end);
+  const end =
+  start + ITEMS_PER_PAGE;
 
- data.forEach(p => {
-  etalase.innerHTML += `
-    <div class="product">
-      <img src="${p.gambar}">
-      <div class="name">${p.nama}</div>
-      <div class="price">${p.harga}</div>
+  const data =
+  filteredData.slice(start,end);
 
-      <!-- DETAIL PRODUK -->
-     <a class="ask detail" href="detail.html?id=${p.id}">
-  Detail Produk
-</a>
+  data.forEach(p => {
 
+    etalase.innerHTML += `
+      <div class="product">
 
-      <!-- TANYA VIA WA -->
-      <a class="ask"
-         href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama)}%22"
-         onclick="fbq('track','Lead',{
-           product:'${p.nama}',
-           price:'${p.harga}'
-         })">
-         Tanya Barang ini
-      </a>
-    </div>`;
-});
+        <img src="${p.gambar}">
 
+        <div class="name">
+          ${p.nama || ""}
+        </div>
+
+        <div class="price">
+          ${p.harga || ""}
+        </div>
+
+        <div class="keterangan">
+          ${p.keterangan || ""}
+        </div>
+
+        <a class="ask detail"
+        href="detail.html?id=${p.id}">
+          Detail Produk
+        </a>
+
+        <a class="ask"
+        href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama || "")}%22">
+          Tanya Barang ini
+        </a>
+
+      </div>
+    `;
+  });
 
   renderPagination();
 }
 
-// =========================
-//   Pagination Angka
-// =========================
-function renderPagination() {
-  pagination.innerHTML = "";
-  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+function renderPagination(){
 
-  for (let i = 1; i <= totalPage; i++) {
+  pagination.innerHTML = "";
+
+  const totalPage =
+  Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+
+  for(let i=1; i<=totalPage; i++){
+
     pagination.innerHTML += `
-      <button onclick="gotoPage(${i})"
-        style="
-          margin:4px;
-          padding:6px 12px;
-          border-radius:8px;
-          border:none;
-          cursor:pointer;
-          font-weight:600;
-          background:${i === currentPage ? '#0f766e' : '#e5e7eb'};
-          color:${i === currentPage ? '#fff' : '#374151'};
-        ">
+      <button
+      onclick="gotoPage(${i})"
+      style="
+        margin:4px;
+        padding:6px 12px;
+        border-radius:8px;
+        border:none;
+        cursor:pointer;
+        font-weight:600;
+        background:${i===currentPage ? '#0f766e' : '#e5e7eb'};
+        color:${i===currentPage ? '#fff' : '#374151'};
+      ">
         ${i}
-      </button>`;
+      </button>
+    `;
   }
 }
 
-function gotoPage(page) {
+function gotoPage(page){
   currentPage = page;
   renderProduk(currentPage);
 }
 
-// =========================
-//   Next & Previous
-// =========================
-function nextPage() {
-  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-  if (currentPage < totalPage) {
+function nextPage(){
+
+  const totalPage =
+  Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+
+  if(currentPage < totalPage){
     currentPage++;
     renderProduk(currentPage);
   }
 }
 
-function prevPage() {
-  if (currentPage > 1) {
+function prevPage(){
+
+  if(currentPage > 1){
     currentPage--;
     renderProduk(currentPage);
   }
 }
 
-// render pertama
-renderProduk(currentPage);
+fetch(API_URL)
+.then(res => res.json())
+.then(data => {
+
+  produkShopee = data;
+  filteredData = data;
+
+  renderProduk(currentPage);
+
+})
+.catch(err => {
+
+  console.error(err);
+
+  etalase.innerHTML = `
+    <p style="text-align:center">
+      Gagal memuat produk
+    </p>
+  `;
+});
+
 </script>
 
- <!-- META PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', 'PIXEL_ID_KAMU');
-fbq('track', 'PageView');
-</script>
-
-  <script>
 let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
 
-window.addEventListener("beforeinstallprompt", (e) => {
+const installBtn =
+document.getElementById("installBtn");
+
+window.addEventListener(
+"beforeinstallprompt",
+(e) => {
+
   e.preventDefault();
+
   deferredPrompt = e;
+
   installBtn.style.display = "block";
 });
 
-installBtn.addEventListener("click", async () => {
-  if (!deferredPrompt) return;
+installBtn.addEventListener(
+"click",
+async () => {
+
+  if(!deferredPrompt) return;
 
   deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
 
-  if (outcome === "accepted") {
-    console.log("User installed PWA");
-  }
+  await deferredPrompt.userChoice;
 
   deferredPrompt = null;
+
   installBtn.style.display = "none";
 });
 </script>
 
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1178846664425406&ev=PageView&noscript=1"/>
-</noscript>
-  
 </body>
 </html>
