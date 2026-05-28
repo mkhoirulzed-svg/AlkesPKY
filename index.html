@@ -2,7 +2,6 @@
 <html lang="id">
 <head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5SBQCD2XR"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -14,21 +13,30 @@ gtag('config', 'G-Z5SBQCD2XR');
 <link rel="icon" type="image/png" href="./logo.png">
 <link rel="apple-touch-icon" href="./logo.png">
 <meta name="theme-color" content="#0f766e">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>Alkes PKY</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --primary:#0f766e;
+  --primary-dark:#115e59;
   --wa:#22c55e;
   --ig:#d62976;
   --shop:#ee4d2d;
   --bg:#f0fdfa;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+}
+
+@font-face{
+  font-family:'Archicoco';
+  src:url('./Archicoco.otf') format('truetype');
 }
 
 *{
@@ -38,126 +46,199 @@ gtag('config', 'G-Z5SBQCD2XR');
 
 body{
   margin:0;
-  background:var(--bg);
-  display:flex;
-  justify-content:center;
+  background:
+    radial-gradient(circle at top, #ccfbf1 0, transparent 330px),
+    var(--bg);
+  color:var(--text);
 }
 
 .container{
-  max-width:420px;
   width:100%;
-  padding:20px;
+  max-width:1180px;
+  margin:0 auto;
+  padding:18px;
 }
 
 .card{
-  background:#fff;
-  border-radius:18px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,118,110,.08);
+  border-radius:24px;
   padding:22px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  box-shadow:0 18px 45px rgba(15,118,110,.10);
 }
 
 .header{
-  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
 .logo{
-  width:110px;
-  margin-bottom:8px;
+  width:78px;
+  height:78px;
+  object-fit:contain;
 }
 
 h1{
   margin:0;
-  font-size:24px;
+  font-family:'Archicoco';
+  color:#4daced;
+  font-size:30px;
+  line-height:1;
 }
 
 .motto{
+  margin-top:5px;
   font-size:14px;
-  color:#6b7280;
+  color:var(--muted);
 }
 
 .social-links{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:flex;
   gap:10px;
-  margin-top:18px;
-}
-
-@font-face {
-  font-family: 'Archicoco';
-  src: url('./Archicoco.otf') format('truetype');
+  flex-wrap:wrap;
 }
 
 .social-btn{
-  padding:12px 6px;
-  border-radius:14px;
+  min-width:100px;
+  padding:11px 14px;
+  border-radius:999px;
   color:#fff;
   text-decoration:none;
-  font-size:12px;
-  font-weight:600;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
+  font-size:13px;
+  font-weight:700;
+  text-align:center;
+  box-shadow:0 8px 18px rgba(0,0,0,.10);
 }
 
 .wa{background:var(--wa);}
 .ig{background:var(--ig);}
 .shop{background:var(--shop);}
 
+.install-btn{
+  width:100%;
+  margin-top:16px;
+  padding:13px;
+  border-radius:16px;
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.toolbar{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  margin-top:20px;
+}
+
+#searchBox{
+  width:100%;
+  padding:14px 16px;
+  border-radius:16px;
+  border:2px solid #d1d5db;
+  font-size:15px;
+  outline:none;
+}
+
+#searchBox:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(15,118,110,.12);
+}
+
 .section-title{
   margin:24px 0 14px;
-  font-size:18px;
-  font-weight:700;
+  font-size:22px;
+  font-weight:800;
 }
 
 .products{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
 }
 
 .product{
-  background:#fff;
-  border-radius:14px;
-  padding:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,.06);
+  background:var(--card);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:18px;
+  padding:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  transition:.2s ease;
+}
+
+.product:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 28px rgba(0,0,0,.10);
 }
 
 .product img{
   width:100%;
-  height:120px;
+  aspect-ratio:1/1;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:14px;
+  background:#f3f4f6;
 }
 
 .name{
-  font-size:13px;
-  font-weight:600;
-  margin-top:6px;
+  font-size:14px;
+  font-weight:800;
+  margin-top:10px;
+  line-height:1.35;
+  min-height:38px;
 }
 
 .price{
-  font-size:14px;
+  font-size:15px;
   color:var(--primary);
-  font-weight:700;
+  font-weight:800;
+  margin-top:5px;
 }
 
 .keterangan{
-  font-size:11px;
-  color:#6b7280;
-  margin-top:4px;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:5px;
+  line-height:1.35;
+}
+
+.actions{
+  margin-top:auto;
+  padding-top:8px;
 }
 
 .ask{
   display:block;
-  margin-top:6px;
-  padding:8px;
+  margin-top:7px;
+  padding:10px;
   background:var(--primary);
   color:#fff;
-  border-radius:10px;
+  border-radius:12px;
   text-align:center;
   font-size:12px;
+  font-weight:800;
   text-decoration:none;
+}
+
+.ask:hover{
+  background:var(--primary-dark);
 }
 
 .detail{
@@ -165,43 +246,148 @@ h1{
   color:#0f766e;
 }
 
+.detail:hover{
+  background:#d1d5db;
+}
+
+#pagination{
+  margin-top:20px;
+  text-align:center;
+}
+
+#pagination button,
+.nav-buttons button{
+  margin:4px;
+  padding:8px 12px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.nav-buttons{
+  text-align:center;
+  margin-top:12px;
+}
+
+.nav-buttons button{
+  background:#e5e7eb;
+  color:#374151;
+  padding:10px 18px;
+}
+
 footer{
   text-align:center;
   font-size:12px;
   margin-top:18px;
-  color:#9ca3af;
+  color:#6b7280;
 }
 
-#searchBox{
-  width:100%;
-  padding:10px 14px;
-  border-radius:12px;
-  border:2px solid #d1d5db;
-  font-size:14px;
-  margin-top:16px;
+/* TABLET */
+@media(max-width:900px){
+  .container{
+    max-width:760px;
+  }
+
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .header{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .brand{
+    justify-content:center;
+  }
+
+  .social-links{
+    justify-content:center;
+    width:100%;
+  }
 }
 
-.nav-buttons button{
-  margin:6px;
-  padding:8px 14px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:600;
-  background:#e5e7eb;
+/* HP */
+@media(max-width:600px){
+  .container{
+    padding:12px;
+  }
+
+  .card{
+    border-radius:20px;
+    padding:16px;
+  }
+
+  .header{
+    display:block;
+    text-align:center;
+  }
+
+  .brand{
+    display:block;
+  }
+
+  .logo{
+    width:105px;
+    height:auto;
+    margin-bottom:8px;
+  }
+
+  h1{
+    font-size:25px;
+  }
+
+  .social-links{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-top:16px;
+  }
+
+  .social-btn{
+    min-width:0;
+    padding:11px 6px;
+    font-size:12px;
+  }
+
+  .toolbar{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    font-size:18px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .product{
+    padding:10px;
+    border-radius:15px;
+  }
+
+  .name{
+    font-size:13px;
+  }
+
+  .price{
+    font-size:14px;
+  }
+
+  .ask{
+    font-size:11px;
+    padding:9px 6px;
+  }
 }
 
-.install-btn{
-  width:100%;
-  margin-top:14px;
-  padding:12px;
-  border-radius:14px;
-  border:none;
-  background:#0f766e;
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
+/* HP KECIL */
+@media(max-width:360px){
+  .products{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -209,162 +395,116 @@ footer{
 <body>
 
 <div class="container">
+  <div class="card">
 
-<div class="card">
+    <div class="header">
+      <div class="brand">
+        <img src="./logo.png" class="logo">
+        <div>
+          <h1>Alkes PKY</h1>
+          <div class="motto">Sahabat Kesehatan Anda</div>
+        </div>
+      </div>
 
-<div class="header">
-<img src="./logo.png" class="logo">
+      <div class="social-links">
+        <a href="https://wa.me/6282253124745" class="social-btn wa">WhatsApp</a>
+        <a href="https://www.instagram.com/alkes_pky/" class="social-btn ig">Instagram</a>
+        <a href="https://shopee.co.id/muhammadkhoirulzed" class="social-btn shop">Shopee</a>
+      </div>
+    </div>
 
-<h1 style="font-family:'Archicoco';color:#4daced;">
-Alkes PKY
-</h1>
+    <button id="installBtn" class="install-btn" style="display:none">
+      📲 Install Alkes PKY
+    </button>
 
-<div class="motto">
-Sahabat Kesehatan Anda
-</div>
-</div>
+    <div class="toolbar">
+      <input
+        type="text"
+        id="searchBox"
+        placeholder="Cari produk kesehatan..."
+        oninput="searchProduk()">
+    </div>
 
-<div class="social-links">
+    <div class="section-title">Produk Pilihan Teratas</div>
 
-<a href="https://wa.me/6282253124745"
-class="social-btn wa">
-WhatsApp
-</a>
+    <div class="products" id="etalase"></div>
 
-<a href="https://www.instagram.com/alkes_pky/"
-class="social-btn ig">
-Instagram
-</a>
+    <div id="pagination"></div>
 
-<a href="https://shopee.co.id/muhammadkhoirulzed"
-class="social-btn shop">
-Shopee
-</a>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
 
-</div>
+  </div>
 
-<button id="installBtn"
-class="install-btn"
-style="display:none">
-📲 Install Alkes PKY
-</button>
-
-<input
-type="text"
-id="searchBox"
-placeholder="Cari produk..."
-oninput="searchProduk()">
-
-<div class="section-title">
-Produk Pilihan Teratas
-</div>
-
-<div class="products" id="etalase"></div>
-
-<div id="pagination"
-style="margin-top:16px;text-align:center">
-</div>
-
-<div class="nav-buttons"
-style="text-align:center;margin-top:10px;">
-
-<button onclick="prevPage()">
-Previous
-</button>
-
-<button onclick="nextPage()">
-Next
-</button>
-
-</div>
-
-</div>
-
-<footer>
-© 2025 Alkes PKY
-</footer>
-
+  <footer>© 2025 Alkes PKY</footer>
 </div>
 
 <script>
-
 const API_URL =
 "https://script.google.com/macros/s/AKfycbz3XTARB3Vd1pANXA5MZ1KqbquHLRC4eO3K6uZENRxfjtvnE1Nb7gv0AHEkxqDxyejGtA/exec?action=produk_web";
 
 let produkShopee = [];
 let filteredData = [];
 
-const etalase =
-document.getElementById("etalase");
+const etalase = document.getElementById("etalase");
+const pagination = document.getElementById("pagination");
 
-const pagination =
-document.getElementById("pagination");
-
-const ITEMS_PER_PAGE = 8;
-
+const ITEMS_PER_PAGE = 10;
 let currentPage = 1;
 
 function searchProduk(){
+  const keyword = document.getElementById("searchBox").value.toLowerCase();
 
-  const keyword =
-  document.getElementById("searchBox")
-  .value
-  .toLowerCase();
-
-  filteredData =
-  produkShopee.filter(p =>
-    (p.nama || "")
-    .toLowerCase()
-    .includes(keyword)
+  filteredData = produkShopee.filter(p =>
+    (p.nama || "").toLowerCase().includes(keyword) ||
+    (p.keterangan || "").toLowerCase().includes(keyword) ||
+    (p.deskripsi || "").toLowerCase().includes(keyword)
   );
 
   currentPage = 1;
-
   renderProduk(currentPage);
 }
 
 function renderProduk(page){
-
   etalase.innerHTML = "";
 
-  const start =
-  (page - 1) * ITEMS_PER_PAGE;
+  const start = (page - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  const data = filteredData.slice(start,end);
 
-  const end =
-  start + ITEMS_PER_PAGE;
-
-  const data =
-  filteredData.slice(start,end);
+  if(data.length === 0){
+    etalase.innerHTML = `
+      <p style="grid-column:1/-1;text-align:center;color:#6b7280">
+        Produk tidak ditemukan.
+      </p>
+    `;
+    pagination.innerHTML = "";
+    return;
+  }
 
   data.forEach(p => {
-
     etalase.innerHTML += `
       <div class="product">
+        <img src="${p.gambar || './logo.png'}" alt="${p.nama || 'Produk Alkes PKY'}">
 
-        <img src="${p.gambar}">
+        <div class="name">${p.nama || ""}</div>
 
-        <div class="name">
-          ${p.nama || ""}
+        <div class="price">${p.harga || ""}</div>
+
+        <div class="keterangan">${p.keterangan || ""}</div>
+
+        <div class="actions">
+          <a class="ask detail" href="detail.html?id=${p.id || ''}">
+            Detail Produk
+          </a>
+
+          <a class="ask"
+          href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama || "")}%22">
+            Tanya Barang ini
+          </a>
         </div>
-
-        <div class="price">
-          ${p.harga || ""}
-        </div>
-
-        <div class="keterangan">
-          ${p.keterangan || ""}
-        </div>
-
-        <a class="ask detail"
-        href="detail.html?id=${p.id}">
-          Detail Produk
-        </a>
-
-        <a class="ask"
-        href="https://wa.me/6282253124745?text=Halo,%20saya%20ingin%20menanyakan%20barang%20ini%20%22${encodeURIComponent(p.nama || "")}%22">
-          Tanya Barang ini
-        </a>
-
       </div>
     `;
   });
@@ -373,27 +513,20 @@ function renderProduk(page){
 }
 
 function renderPagination(){
-
   pagination.innerHTML = "";
 
-  const totalPage =
-  Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+
+  if(totalPage <= 1) return;
 
   for(let i=1; i<=totalPage; i++){
-
     pagination.innerHTML += `
       <button
-      onclick="gotoPage(${i})"
-      style="
-        margin:4px;
-        padding:6px 12px;
-        border-radius:8px;
-        border:none;
-        cursor:pointer;
-        font-weight:600;
-        background:${i===currentPage ? '#0f766e' : '#e5e7eb'};
-        color:${i===currentPage ? '#fff' : '#374151'};
-      ">
+        onclick="gotoPage(${i})"
+        style="
+          background:${i===currentPage ? '#0f766e' : '#e5e7eb'};
+          color:${i===currentPage ? '#fff' : '#374151'};
+        ">
         ${i}
       </button>
     `;
@@ -403,79 +536,61 @@ function renderPagination(){
 function gotoPage(page){
   currentPage = page;
   renderProduk(currentPage);
+  window.scrollTo({top:0, behavior:"smooth"});
 }
 
 function nextPage(){
-
-  const totalPage =
-  Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
   if(currentPage < totalPage){
     currentPage++;
     renderProduk(currentPage);
+    window.scrollTo({top:0, behavior:"smooth"});
   }
 }
 
 function prevPage(){
-
   if(currentPage > 1){
     currentPage--;
     renderProduk(currentPage);
+    window.scrollTo({top:0, behavior:"smooth"});
   }
 }
 
 fetch(API_URL)
 .then(res => res.json())
 .then(data => {
-
-  produkShopee = data;
-  filteredData = data;
-
+  produkShopee = Array.isArray(data) ? data : [];
+  filteredData = produkShopee;
   renderProduk(currentPage);
-
 })
 .catch(err => {
-
   console.error(err);
-
   etalase.innerHTML = `
-    <p style="text-align:center">
+    <p style="grid-column:1/-1;text-align:center;color:#6b7280">
       Gagal memuat produk
     </p>
   `;
 });
-
 </script>
 
 <script>
 let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
 
-const installBtn =
-document.getElementById("installBtn");
-
-window.addEventListener(
-"beforeinstallprompt",
-(e) => {
-
+window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
-
   deferredPrompt = e;
-
   installBtn.style.display = "block";
 });
 
-installBtn.addEventListener(
-"click",
-async () => {
-
+installBtn.addEventListener("click", async () => {
   if(!deferredPrompt) return;
 
   deferredPrompt.prompt();
-
   await deferredPrompt.userChoice;
 
   deferredPrompt = null;
-
   installBtn.style.display = "none";
 });
 </script>
