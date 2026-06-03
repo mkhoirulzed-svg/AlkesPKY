@@ -28,7 +28,7 @@
 </div>
 <script>
 /* GANTI URL INI DENGAN URL WEB APP APPS SCRIPT KAMU */
-const API_URL = "PASTE_URL_APPS_SCRIPT_DI_SINI";
+const API_URL = "https://script.google.com/macros/s/AKfycbz3XTARB3Vd1pANXA5MZ1KqbquHLRC4eO3K6uZENRxfjtvnE1Nb7gv0AHEkxqDxyejGtA/exec?action=produk_web";
 let allProducts=[], selected=new Set(), selectorOpen=false;
 const fallbackProducts=[{id:"tensi-omron",nama:"Tensimeter Digital Omron",harga:"Rp700.000",gambar:"",kategori:"Tensimeter",keterangan:"Tersedia"},{id:"tensi-sinocare",nama:"Tensimeter Digital Sinocare BA-801",harga:"Rp250.000",gambar:"",kategori:"Tensimeter",keterangan:"Tersedia"},{id:"termogun",nama:"Thermogun Digital",harga:"Rp85.000",gambar:"",kategori:"Termometer",keterangan:"Tersedia"},{id:"termometer-digital",nama:"Termometer Digital",harga:"Rp25.000",gambar:"",kategori:"Termometer",keterangan:"Tersedia"},{id:"oksimeter",nama:"Pulse Oximeter",harga:"Rp95.000",gambar:"",kategori:"Monitor",keterangan:"Tersedia"},{id:"nursing-kit",nama:"Nursing Kit",harga:"Rp185.000",gambar:"",kategori:"Praktik",keterangan:"Tersedia"}];
 function normalizeProduct(raw,index){const nama=raw.nama||raw.Nama||raw.name||raw.Name||raw.produk||raw.Produk||"";const harga=raw.harga||raw.Harga||raw.price||raw.Price||"";const gambar=raw.gambar||raw.Gambar||raw.image||raw.Image||raw.foto||raw.Foto||raw.link_gambar||raw["Link Gambar"]||"";const kategori=raw.kategori||raw.Kategori||raw.category||raw.Category||raw.jenis||raw.Jenis||"Produk";const keterangan=raw.keterangan||raw.Keterangan||raw.status||raw.Status||raw.stok||raw.Stok||"";const id=raw.id||raw.ID||raw.slug||raw.Slug||makeId(nama||("produk-"+index));return{id,nama,harga,gambar,kategori,keterangan}}
