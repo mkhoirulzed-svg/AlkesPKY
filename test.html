@@ -414,6 +414,19 @@ footer{text-align:center;color:var(--muted);padding:24px 10px;font-size:13px}
   padding:4px;
   box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
+
+.catalog-badge{
+  display:inline-block;
+  padding:6px 12px;
+  margin-bottom:10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.3);
+  color:white;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+}
 </style>
 </head>
 
@@ -430,7 +443,7 @@ footer{text-align:center;color:var(--muted);padding:24px 10px;font-size:13px}
             <p class="subtitle">Sahabat Kesehatan Anda</p>
           </div>
         </div>
-        <div class="hero-badge">✨ Katalog modern dari database Apps Script</div>
+        <div class="hero-badge">✨ Katalog modern dari database</div>
         <h2>Pilih produk seperlunya, lalu simpan katalog menjadi PDF.</h2>
         <p class="hero-text">Produk diambil otomatis dari database. Katalog hanya menampilkan nama, gambar, dan harga sesuai pilihan.</p>
 
@@ -731,10 +744,13 @@ function renderPreview(){
     </div>
 
     <div class="preview-cover">
-      <div>
-        <h3>${title}</h3>
-        <p>Produk alat kesehatan pilihan untuk rumah, mahasiswa kesehatan, klinik, dan tenaga kesehatan.</p>
-      </div>
+    <div class="catalog-badge">
+  KATALOG RESMI ALKES PKY
+</div>
+
+<h3>${title}</h3>
+
+<p>Update Katalog Terbaru</p>
       <div class="preview-qr-wrap">
         <img src="./qr-instagram-alkes-pky.png" alt="QR Instagram">
         <strong>Scan Instagram</strong>
