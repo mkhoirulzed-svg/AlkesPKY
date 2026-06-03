@@ -404,6 +404,16 @@ footer{text-align:center;color:var(--muted);padding:24px 10px;font-size:13px}
   .catalog-item strong{font-size:12px}
   .catalog-item .price{font-size:11px;padding:4px 8px}
 }
+
+.catalog-logo-img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  border-radius:16px;
+  background:#fff;
+  padding:4px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
 </style>
 </head>
 
@@ -706,14 +716,13 @@ function renderPreview(){
   `).join("") : `<div class="empty">Belum ada barang dipilih.</div>`;
 
   document.getElementById("catalogPreview").innerHTML = `
-    <div class="catalog-top">
-      <div class="catalog-brand">
-        <div class="catalog-logo">A+</div>
-        <div>
-          <h2>Alkes PKY</h2>
-          <p>Sahabat Kesehatan Anda</p>
-        </div>
-      </div>
+  <div class="catalog-brand">
+  <img src="./logo.png" class="catalog-logo-img" alt="Alkes PKY">
+  <div>
+    <h2>Alkes PKY</h2>
+    <p>Sahabat Kesehatan Anda</p>
+  </div>
+</div>
       <div class="top-contact">
         <span>📱 WA 0822-5312-4745</span>
         <span>📷 IG @Alkes_pky</span>
