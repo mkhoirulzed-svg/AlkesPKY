@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Katalog Alkes PKY</title>
+
+<link rel="icon" type="image/png" href="./logo.png">
+<link rel="apple-touch-icon" href="./logo.png">
+<meta name="theme-color" content="#0f766e">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0f766e;
+  --primary2:#14b8a6;
+  --blue:#0284c7;
+  --dark:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --bg:#f6fbfb;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(20,184,166,.20), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(2,132,199,.16), transparent 30%),
+    var(--bg);
+  color:var(--dark);
+}
+.app{max-width:1180px;margin:auto;padding:16px}
+.hero{
+  overflow:hidden;
+  position:relative;
+  border-radius:32px;
+  padding:24px;
+  background:linear-gradient(135deg, rgba(15,118,110,.98), rgba(20,184,166,.92), rgba(2,132,199,.84));
+  color:white;
+  box-shadow:0 22px 55px rgba(15,118,110,.22);
+}
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:22px;
+  align-items:center;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-box{
+  width:62px;height:62px;border-radius:22px;
+  background:white;color:var(--primary);
+  display:grid;place-items:center;
+  font-weight:900;font-size:28px;
+  box-shadow:0 14px 32px rgba(0,0,0,.13);
+}
+h1{margin:0;font-size:clamp(32px,5vw,56px);letter-spacing:-1.6px;line-height:1}
+.subtitle{margin:8px 0 0;font-size:16px;opacity:.94}
+.hero-badge{
+  display:inline-flex;
+  margin:20px 0 12px;
+  padding:9px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.26);
+  font-weight:800;
+  font-size:13px;
+}
+.hero h2{margin:0;font-size:clamp(22px,4vw,38px);letter-spacing:-.8px}
+.hero-text{max-width:680px;margin:12px 0 0;color:rgba(255,255,255,.92);line-height:1.65}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.contact-pill{
+  color:white;text-decoration:none;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.14);
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:800;
+  font-size:13px;
+}
+.qr-card{
+  background:white;color:var(--dark);
+  border-radius:28px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 22px 44px rgba(0,0,0,.14);
+}
+.qr-card img{width:100%;max-width:230px;border-radius:22px;display:block;margin:auto}
+.qr-card strong{display:block;margin-top:10px;font-size:18px}
+.qr-card span{font-size:13px;color:var(--muted)}
+
+.panel{
+  margin-top:18px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(226,232,240,.95);
+  border-radius:30px;
+  box-shadow:0 18px 44px rgba(15,23,42,.07);
+  overflow:hidden;
+}
+.panel-head{
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+}
+.panel-head h3{margin:0;font-size:23px;letter-spacing:-.5px}
+.panel-head p{margin:6px 0 0;color:var(--muted);line-height:1.5}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.btn{
+  border:0;cursor:pointer;
+  border-radius:16px;
+  padding:12px 15px;
+  font-weight:900;
+  font-family:inherit;
+  box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white}
+.btn-soft{background:#f1f5f9;color:var(--dark)}
+.btn-outline{background:white;color:var(--primary);border:1px solid #99f6e4}
+.controls{
+  padding:18px 20px;
+  display:grid;
+  grid-template-columns:1.2fr 220px 210px;
+  gap:12px;
+}
+.input,.select{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:white;
+  padding:14px 15px;
+  font:inherit;
+  outline:none;
+}
+.input:focus,.select:focus{border-color:var(--primary2);box-shadow:0 0 0 4px rgba(20,184,166,.13)}
+.options-row{
+  padding:0 20px 18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+.option-check{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 13px;
+  font-weight:800;
+  font-size:13px;
+}
+.option-check input{accent-color:var(--primary)}
+.selector-box{
+  display:none;
+  border-top:1px solid var(--line);
+  padding:18px 20px 20px;
+  background:#fbfeff;
+}
+.selector-box.show{display:block}
+.selector-toolbar{
+  display:grid;
+  grid-template-columns:1fr 200px auto auto;
+  gap:10px;
+  margin-bottom:14px;
+}
+.product-select-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  max-height:520px;
+  overflow:auto;
+  padding-right:4px;
+}
+.product-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:12px;
+  transition:.2s;
+}
+.product-card.selected{
+  border-color:var(--primary2);
+  background:linear-gradient(180deg,#ffffff,#f0fdfa);
+}
+.product-img{
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:18px;
+  object-fit:cover;
+  background:#f1f5f9;
+  border:1px solid #eef2f7;
+}
+.product-top{display:flex;justify-content:space-between;gap:8px;margin-top:10px}
+.product-card input{width:20px;height:20px;accent-color:var(--primary)}
+.tag{
+  display:inline-block;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#ecfeff;
+  color:#0e7490;
+  font-size:11px;
+  font-weight:900;
+}
+.product-card h4{margin:10px 0 6px;font-size:14px;letter-spacing:-.25px;line-height:1.3}
+.product-card .price{font-size:13px;font-weight:900;color:var(--primary)}
+
+.catalog-preview{padding:22px 20px 24px;background:linear-gradient(180deg,#f8fafc,#ffffff)}
+.preview-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(15,23,42,.08);
+}
+.catalog-top{
+  padding:18px 22px;
+  background:#ffffff;
+  border-bottom:1px solid var(--line);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:16px;
+  align-items:center;
+}
+.catalog-brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.catalog-logo{
+  width:50px;height:50px;border-radius:18px;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:white;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:22px;
+}
+.catalog-brand h2{
+  margin:0;
+  font-size:28px;
+  letter-spacing:-.8px;
+}
+.catalog-brand p{margin:4px 0 0;color:var(--muted);font-weight:700}
+.top-contact{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:8px;
+}
+.top-contact span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 11px;
+  border-radius:999px;
+  background:#f0fdfa;
+  color:#0f766e;
+  border:1px solid #ccfbf1;
+  font-size:12px;
+  font-weight:900;
+}
+.preview-cover{
+  padding:24px 24px 22px;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 32%),
+    linear-gradient(135deg, rgba(15,118,110,.98), rgba(20,184,166,.90), rgba(2,132,199,.84));
+  color:white;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:22px;
+  align-items:center;
+}
+.preview-cover h3{
+  margin:0;
+  font-size:34px;
+  letter-spacing:-1px;
+}
+.preview-cover p{margin:8px 0 0;color:rgba(255,255,255,.92);font-weight:600}
+.preview-qr-wrap{
+  background:white;
+  color:var(--dark);
+  border-radius:24px;
+  padding:12px;
+  text-align:center;
+  width:170px;
+  box-shadow:0 18px 34px rgba(0,0,0,.14);
+}
+.preview-qr-wrap img{
+  width:145px;
+  height:145px;
+  object-fit:cover;
+  border-radius:18px;
+  display:block;
+  margin:auto;
+}
+.preview-qr-wrap strong{
+  display:block;
+  margin-top:7px;
+  color:#0284c7;
+  font-size:15px;
+}
+.preview-list{
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.catalog-item{
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:12px;
+  background:
+    linear-gradient(180deg,#ffffff,#fbfdff);
+  text-align:center;
+  break-inside:avoid;
+  box-shadow:0 8px 22px rgba(15,23,42,.04);
+}
+.catalog-item img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:20px;
+  background:#f1f5f9;
+  border:1px solid #eef2f7;
+}
+.catalog-item strong{
+  display:block;
+  margin-top:10px;
+  font-size:15px;
+  line-height:1.3;
+}
+.catalog-item .price{
+  margin:8px auto 0;
+  width:max-content;
+  max-width:100%;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#ecfeff;
+  border:1px solid #cffafe;
+  font-size:14px;
+  font-weight:900;
+  color:var(--primary);
+}
+.preview-footer{
+  display:none;
+}
+.empty{
+  grid-column:1/-1;
+  padding:26px;
+  border:1px dashed #cbd5e1;
+  border-radius:22px;
+  text-align:center;
+  color:var(--muted);
+  background:white;
+}
+.status{padding:12px 20px 0;color:var(--muted);font-size:13px;font-weight:700}
+footer{text-align:center;color:var(--muted);padding:24px 10px;font-size:13px}
+
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .qr-card{max-width:320px}
+  .controls,.selector-toolbar{grid-template-columns:1fr}
+  .product-select-grid{grid-template-columns:repeat(2,1fr)}
+  .preview-list{grid-template-columns:repeat(2,1fr)!important}
+  .panel-head{grid-template-columns:1fr}
+  .actions{justify-content:flex-start}
+  .catalog-top,.preview-cover{grid-template-columns:1fr}
+  .top-contact{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .app{padding:12px}
+  .hero{border-radius:26px;padding:18px}
+  .logo-box{width:52px;height:52px;border-radius:18px}
+  .contact-pill{width:100%;text-align:center}
+  .product-select-grid,.preview-list{grid-template-columns:1fr!important}
+  .preview-qr-wrap{width:100%}
+  .preview-qr-wrap img{width:170px;height:170px}
+}
+@media print{
+  @page{size:A4;margin:8mm}
+  body{background:white}
+  .hero,.no-print,footer{display:none!important}
+  .app{max-width:none;padding:0}
+  .panel{margin:0;border:0;box-shadow:none;border-radius:0}
+  .panel-head{display:none}
+  .catalog-preview{padding:0}
+  .preview-card{border:0;border-radius:0;box-shadow:none}
+  .catalog-top{padding:10px 12px}
+  .catalog-brand h2{font-size:22px}
+  .top-contact span{font-size:10.5px;padding:6px 8px}
+  .preview-cover{padding:14px 16px;grid-template-columns:1fr auto}
+  .preview-cover h3{font-size:26px}
+  .preview-qr-wrap{width:138px;border-radius:18px;padding:8px}
+  .preview-qr-wrap img{width:116px;height:116px;border-radius:14px}
+  .preview-list{padding:12px;gap:10px;grid-template-columns:repeat(4,1fr)!important}
+  .catalog-item{padding:8px;border-radius:18px}
+  .catalog-item img{border-radius:15px}
+  .catalog-item strong{font-size:12px}
+  .catalog-item .price{font-size:11px;padding:4px 8px}
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="brand">
+          <div class="logo-box">A+</div>
+          <div>
+            <h1>Alkes PKY</h1>
+            <p class="subtitle">Sahabat Kesehatan Anda</p>
+          </div>
+        </div>
+        <div class="hero-badge">✨ Katalog modern dari database Apps Script</div>
+        <h2>Pilih produk seperlunya, lalu simpan katalog menjadi PDF.</h2>
+        <p class="hero-text">Produk diambil otomatis dari database. Katalog hanya menampilkan nama, gambar, dan harga sesuai pilihan.</p>
+
+        <div class="contact-row">
+          <a class="contact-pill" href="https://wa.me/6282253124745">WA 0822-5312-4745</a>
+          <a class="contact-pill" href="https://www.instagram.com/alkes_pky/">Instagram @Alkes_pky</a>
+          <a class="contact-pill" href="https://www.alkespky.store">www.alkespky.store</a>
+        </div>
+      </div>
+
+      <div class="qr-card">
+        <img src="./qr-instagram-alkes-pky.png" alt="QR Instagram Alkes PKY">
+        <strong>@Alkes_pky</strong>
+        <span>Scan untuk melihat Instagram</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel no-print">
+    <div class="panel-head">
+      <div>
+        <h3>Pengaturan Katalog</h3>
+        <p>Daftar centang disembunyikan. Klik “Tampilkan Pilihan Barang” bila ingin memilih produk.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-outline" onclick="loadProducts()">Refresh Database</button>
+        <button class="btn btn-soft" onclick="toggleSelector()">Tampilkan Pilihan Barang</button>
+        <button class="btn btn-primary" onclick="window.print()">Cetak / Simpan PDF</button>
+      </div>
+    </div>
+
+    <div class="status" id="statusText">Memuat produk dari database...</div>
+
+    <div class="controls">
+      <input id="catalogTitle" class="input" value="Katalog Alkes PKY" placeholder="Judul katalog">
+      <select id="quickCatalog" class="select" onchange="applyQuickCatalog()">
+        <option value="">Pilih katalog cepat...</option>
+        <option value="tensimeter">Katalog Tensimeter</option>
+        <option value="termometer">Katalog Termometer</option>
+        <option value="lengkap">Katalog Lengkap</option>
+        <option value="nursing">Katalog Nursing Kit & Praktik</option>
+        <option value="rawatluka">Katalog Set Rawat Luka</option>
+      </select>
+      <select id="layoutSelect" class="select" onchange="renderPreview()">
+        <option value="4">Layout 4 kolom</option>
+        <option value="3">Layout 3 kolom</option>
+        <option value="2">Layout 2 kolom</option>
+        <option value="1">Layout 1 kolom</option>
+      </select>
+    </div>
+
+    <div class="options-row">
+      <label class="option-check">
+        <input type="checkbox" id="showPrice" checked onchange="renderPreview()">
+        Tampilkan harga
+      </label>
+      <label class="option-check">
+        <input type="checkbox" id="onlyAvailable" checked onchange="renderProductSelector(); renderPreview()">
+        Hanya tampilkan stok tersedia
+      </label>
+      <button class="btn btn-soft" onclick="selectAllVisible()">Pilih semua yang tampil</button>
+      <button class="btn btn-soft" onclick="clearAll()">Kosongkan pilihan</button>
+    </div>
+
+    <div class="selector-box" id="selectorBox">
+      <div class="selector-toolbar">
+        <input id="searchBox" class="input" placeholder="Cari nama produk..." oninput="renderProductSelector()">
+        <select id="categoryFilter" class="select" onchange="renderProductSelector()">
+          <option value="">Semua kategori</option>
+        </select>
+        <button class="btn btn-soft" onclick="selectAllVisible()">Pilih tampil</button>
+        <button class="btn btn-soft" onclick="toggleSelector()">Sembunyikan</button>
+      </div>
+      <div class="product-select-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head no-print">
+      <div>
+        <h3>Preview Katalog</h3>
+        <p>WA, Instagram, website, dan QR sudah ditaruh di bagian atas katalog.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="window.print()">Simpan PDF</button>
+      </div>
+    </div>
+
+    <div class="catalog-preview">
+      <div class="preview-card" id="catalogPreview"></div>
+    </div>
+  </section>
+
+  <footer>© 2025–2026 Alkes PKY • Sahabat Kesehatan Anda</footer>
+</div>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbz3XTARB3Vd1pANXA5MZ1KqbquHLRC4eO3K6uZENRxfjtvnE1Nb7gv0AHEkxqDxyejGtA/exec?action=produk_web";
+
+let allProducts = [];
+let selected = new Set();
+let selectorOpen = false;
+
+const fallbackProducts = [
+  {id:"tensi-omron", nama:"Tensimeter Digital Omron", harga:"Rp700.000", gambar:"", kategori:"Tensimeter", keterangan:"Tersedia"},
+  {id:"termogun", nama:"Thermogun Digital", harga:"Rp85.000", gambar:"", kategori:"Termometer", keterangan:"Tersedia"},
+  {id:"oksimeter", nama:"Pulse Oximeter", harga:"Rp95.000", gambar:"", kategori:"Monitor", keterangan:"Tersedia"}
+];
+
+function normalizeProduct(raw, index){
+  const nama = raw.nama || raw.Nama || raw.name || raw.Name || raw.produk || raw.Produk || "";
+  const harga = raw.harga || raw.Harga || raw.price || raw.Price || "";
+  const gambar = raw.gambar || raw.Gambar || raw.image || raw.Image || raw.foto || raw.Foto || raw.link_gambar || raw["Link Gambar"] || "";
+  const kategori = raw.kategori || raw.Kategori || raw.category || raw.Category || raw.jenis || raw.Jenis || "Produk";
+  const keterangan = raw.keterangan || raw.Keterangan || raw.status || raw.Status || raw.stok || raw.Stok || "";
+  const id = raw.id || raw.ID || raw.slug || raw.Slug || makeId(nama || ("produk-" + index));
+  return {id, nama, harga, gambar, kategori, keterangan};
+}
+
+function makeId(text){
+  return String(text).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"") || Math.random().toString(36).slice(2);
+}
+
+function isAvailable(p){
+  const text = String(p.keterangan || "").toLowerCase();
+  if(!text) return true;
+  return text.includes("tersedia") || text.includes("ready") || text.includes("ada");
+}
+
+function imageFallback(img){
+  img.onerror = null;
+  img.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
+      <rect width='300' height='300' rx='28' fill='#f1f5f9'/>
+      <circle cx='150' cy='118' r='42' fill='#cbd5e1'/>
+      <path d='M70 230c18-52 52-78 80-78s62 26 80 78' fill='#cbd5e1'/>
+      <text x='150' y='270' text-anchor='middle' font-family='Arial' font-size='18' fill='#64748b'>Alkes PKY</text>
+    </svg>
+  `);
+}
+
+async function loadProducts(){
+  const status = document.getElementById("statusText");
+  status.textContent = "Memuat produk dari database...";
+  try{
+    const res = await fetch(API_URL, {cache:"no-store"});
+    const data = await res.json();
+
+    const arr = Array.isArray(data) ? data :
+      Array.isArray(data.data) ? data.data :
+      Array.isArray(data.produk) ? data.produk :
+      Array.isArray(data.products) ? data.products : [];
+
+    if(!arr.length) throw new Error("Data kosong atau format JSON belum sesuai.");
+
+    allProducts = arr.map(normalizeProduct).filter(p => p.nama);
+    status.textContent = `Berhasil memuat ${allProducts.length} produk dari database.`;
+  }catch(err){
+    allProducts = fallbackProducts.map(normalizeProduct);
+    status.textContent = "Database belum terbaca. Sementara menampilkan contoh produk.";
+    console.warn(err);
+  }
+
+  selected = new Set(allProducts.slice(0,12).map(p=>p.id));
+  renderCategoryOptions();
+  renderProductSelector();
+  renderPreview();
+}
+
+function renderCategoryOptions(){
+  const select = document.getElementById("categoryFilter");
+  const cats = [...new Set(allProducts.map(p=>p.kategori).filter(Boolean))].sort();
+  select.innerHTML = `<option value="">Semua kategori</option>` + cats.map(c=>`<option value="${c}">${c}</option>`).join("");
+}
+
+function getVisibleProducts(){
+  const q = document.getElementById("searchBox")?.value?.toLowerCase() || "";
+  const cat = document.getElementById("categoryFilter")?.value || "";
+  const onlyAvailable = document.getElementById("onlyAvailable").checked;
+
+  return allProducts.filter(p=>{
+    const matchQ = !q || p.nama.toLowerCase().includes(q);
+    const matchCat = !cat || p.kategori === cat;
+    const matchStock = !onlyAvailable || isAvailable(p);
+    return matchQ && matchCat && matchStock;
+  });
+}
+
+function renderProductSelector(){
+  const grid = document.getElementById("productGrid");
+  const list = getVisibleProducts();
+
+  if(!list.length){
+    grid.innerHTML = `<div class="empty">Produk tidak ditemukan.</div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map(p=>`
+    <div class="product-card ${selected.has(p.id) ? "selected" : ""}">
+      <img class="product-img" src="${p.gambar || ""}" alt="${p.nama}" onerror="imageFallback(this)">
+      <div class="product-top">
+        <span class="tag">${p.kategori || "Produk"}</span>
+        <input type="checkbox" ${selected.has(p.id) ? "checked" : ""} onchange="toggleProduct('${p.id}', this.checked)">
+      </div>
+      <h4>${p.nama}</h4>
+      <div class="price">${p.harga || ""}</div>
+    </div>
+  `).join("");
+}
+
+function toggleProduct(id, checked){
+  checked ? selected.add(id) : selected.delete(id);
+  renderProductSelector();
+  renderPreview();
+}
+
+function toggleSelector(){
+  selectorOpen = !selectorOpen;
+  document.getElementById("selectorBox").classList.toggle("show", selectorOpen);
+}
+
+function selectAllVisible(){
+  getVisibleProducts().forEach(p=>selected.add(p.id));
+  renderProductSelector();
+  renderPreview();
+}
+
+function clearAll(){
+  selected.clear();
+  renderProductSelector();
+  renderPreview();
+}
+
+function applyQuickCatalog(){
+  const val = document.getElementById("quickCatalog").value;
+  if(!val) return;
+
+  const keywords = {
+    tensimeter:["tensi","tensimeter"],
+    termometer:["termometer","thermogun","suhu"],
+    lengkap:[""],
+    nursing:["nursing","praktik","handscoon","sarung tangan","apron","clemek","stetoskop"],
+    rawatluka:["alkohol","povidone","kasa","plester","luka","betadine"]
+  };
+
+  selected.clear();
+
+  if(val === "lengkap"){
+    allProducts.filter(p=>!document.getElementById("onlyAvailable").checked || isAvailable(p)).forEach(p=>selected.add(p.id));
+  }else{
+    allProducts.forEach(p=>{
+      const name = p.nama.toLowerCase();
+      if(keywords[val].some(k=>name.includes(k))) selected.add(p.id);
+    });
+  }
+
+  const titleMap = {
+    tensimeter:"Katalog Tensimeter Alkes PKY",
+    termometer:"Katalog Termometer Alkes PKY",
+    lengkap:"Katalog Lengkap Alkes PKY",
+    nursing:"Katalog Nursing Kit & Perlengkapan Praktik",
+    rawatluka:"Katalog Set Rawat Luka Alkes PKY"
+  };
+  document.getElementById("catalogTitle").value = titleMap[val];
+  renderProductSelector();
+  renderPreview();
+}
+
+function renderPreview(){
+  const title = document.getElementById("catalogTitle").value || "Katalog Alkes PKY";
+  const layout = document.getElementById("layoutSelect").value || "4";
+  const showPrice = document.getElementById("showPrice").checked;
+  const onlyAvailable = document.getElementById("onlyAvailable").checked;
+
+  const items = allProducts.filter(p => selected.has(p.id) && (!onlyAvailable || isAvailable(p)));
+
+  const listHtml = items.length ? items.map(p=>`
+    <div class="catalog-item">
+      <img src="${p.gambar || ""}" alt="${p.nama}" onerror="imageFallback(this)">
+      <strong>${p.nama}</strong>
+      ${showPrice && p.harga ? `<div class="price">${p.harga}</div>` : ""}
+    </div>
+  `).join("") : `<div class="empty">Belum ada barang dipilih.</div>`;
+
+  document.getElementById("catalogPreview").innerHTML = `
+    <div class="catalog-top">
+      <div class="catalog-brand">
+        <div class="catalog-logo">A+</div>
+        <div>
+          <h2>Alkes PKY</h2>
+          <p>Sahabat Kesehatan Anda</p>
+        </div>
+      </div>
+      <div class="top-contact">
+        <span>📱 WA 0822-5312-4745</span>
+        <span>📷 IG @Alkes_pky</span>
+        <span>🌐 www.alkespky.store</span>
+      </div>
+    </div>
+
+    <div class="preview-cover">
+      <div>
+        <h3>${title}</h3>
+        <p>Produk alat kesehatan pilihan untuk rumah, mahasiswa kesehatan, klinik, dan tenaga kesehatan.</p>
+      </div>
+      <div class="preview-qr-wrap">
+        <img src="./qr-instagram-alkes-pky.png" alt="QR Instagram">
+        <strong>Scan Instagram</strong>
+      </div>
+    </div>
+
+    <div class="preview-list" style="grid-template-columns:repeat(${layout},1fr)">
+      ${listHtml}
+    </div>
+  `;
+}
+
+document.getElementById("catalogTitle").addEventListener("input", renderPreview);
+loadProducts();
+</script>
+</body>
+</html>
