@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Katalog Alkes PKY</title>
+
+<link rel="icon" type="image/png" href="./logo.png">
+<link rel="apple-touch-icon" href="./logo.png">
+<meta name="theme-color" content="#0f766e">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0f766e;
+  --primary2:#14b8a6;
+  --blue:#0284c7;
+  --dark:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --bg:#f6fbfb;
+  --card:#ffffff;
+  --soft:#ecfeff;
+  --danger:#ef4444;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(20,184,166,.22), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(2,132,199,.18), transparent 28%),
+    var(--bg);
+  color:var(--dark);
+}
+.app{
+  max-width:1180px;
+  margin:auto;
+  padding:18px;
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+  padding:24px;
+  background:
+    linear-gradient(135deg, rgba(15,118,110,.96), rgba(20,184,166,.9), rgba(2,132,199,.85));
+  color:white;
+  box-shadow:0 24px 60px rgba(15,118,110,.22);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:280px;height:280px;
+  right:-80px;top:-90px;
+  border-radius:999px;
+  background:rgba(255,255,255,.15);
+}
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.4fr .7fr;
+  gap:22px;
+  align-items:center;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo-box{
+  width:62px;height:62px;border-radius:22px;
+  background:white;
+  color:var(--primary);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:28px;
+  box-shadow:0 14px 34px rgba(0,0,0,.12);
+}
+h1{
+  margin:0;
+  font-size:clamp(30px,5vw,56px);
+  letter-spacing:-1.6px;
+  line-height:1;
+}
+.subtitle{
+  margin:8px 0 0;
+  font-size:16px;
+  opacity:.94;
+}
+.hero-badge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  margin:20px 0 12px;
+  padding:9px 13px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+  font-size:13px;
+  font-weight:700;
+}
+.hero h2{
+  margin:0;
+  font-size:clamp(22px,4vw,38px);
+  letter-spacing:-.8px;
+  max-width:720px;
+}
+.hero-text{
+  max-width:650px;
+  margin:12px 0 0;
+  color:rgba(255,255,255,.92);
+  line-height:1.65;
+}
+.contact-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+.contact-pill{
+  color:white;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.14);
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:800;
+  font-size:13px;
+}
+.qr-card{
+  background:white;
+  color:var(--dark);
+  border-radius:28px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 22px 44px rgba(0,0,0,.14);
+}
+.qr-card img{
+  width:100%;
+  max-width:235px;
+  border-radius:22px;
+  display:block;
+  margin:auto;
+}
+.qr-card strong{display:block;margin-top:10px;font-size:18px}
+.qr-card span{font-size:13px;color:var(--muted)}
+
+.panel{
+  margin-top:18px;
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(226,232,240,.9);
+  border-radius:30px;
+  box-shadow:0 18px 44px rgba(15,23,42,.07);
+  overflow:hidden;
+}
+.panel-head{
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+}
+.panel-head h3{margin:0;font-size:23px;letter-spacing:-.5px}
+.panel-head p{margin:6px 0 0;color:var(--muted);line-height:1.5}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
+}
+.btn{
+  border:0;
+  cursor:pointer;
+  border-radius:16px;
+  padding:12px 15px;
+  font-weight:900;
+  font-family:inherit;
+  box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white}
+.btn-soft{background:#f1f5f9;color:var(--dark)}
+.btn-danger{background:#fee2e2;color:#991b1b}
+.controls{
+  padding:18px 20px;
+  display:grid;
+  grid-template-columns:1fr 220px 220px;
+  gap:12px;
+}
+.input,.select{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:white;
+  padding:14px 15px;
+  font:inherit;
+  outline:none;
+}
+.input:focus,.select:focus{border-color:var(--primary2);box-shadow:0 0 0 4px rgba(20,184,166,.13)}
+.check-area{
+  padding:0 20px 20px;
+}
+.category-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:16px;
+}
+.tab{
+  user-select:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:999px;
+  padding:11px 14px;
+  font-size:13px;
+  font-weight:900;
+}
+.tab input{accent-color:var(--primary)}
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.product-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:14px;
+  position:relative;
+  transition:.2s;
+  min-height:170px;
+}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(15,23,42,.08)}
+.product-card.selected{
+  border-color:var(--primary2);
+  background:linear-gradient(180deg,#ffffff,#f0fdfa);
+}
+.product-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+.product-card input{
+  width:20px;height:20px;
+  accent-color:var(--primary);
+}
+.tag{
+  display:inline-block;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#ecfeff;
+  color:#0e7490;
+  font-size:11px;
+  font-weight:900;
+}
+.product-card h4{
+  margin:16px 0 6px;
+  font-size:16px;
+  letter-spacing:-.3px;
+}
+.product-card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:13px;
+}
+.price{
+  margin-top:12px;
+  font-weight:900;
+  color:var(--primary);
+}
+.catalog-preview{
+  padding:22px 20px 24px;
+  background:linear-gradient(180deg,#f8fafc,#ffffff);
+}
+.preview-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(15,23,42,.08);
+}
+.preview-cover{
+  padding:24px;
+  background:
+    linear-gradient(135deg, rgba(15,118,110,.97), rgba(20,184,166,.88), rgba(2,132,199,.82));
+  color:white;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  align-items:center;
+}
+.preview-cover h2{margin:0;font-size:32px;letter-spacing:-1px}
+.preview-cover p{margin:8px 0 0;color:rgba(255,255,255,.92)}
+.preview-qr{
+  width:110px;height:110px;
+  border-radius:20px;
+  background:white;
+  padding:8px;
+}
+.preview-qr img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.preview-list{
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.preview-item{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:14px;
+  background:#fff;
+}
+.preview-item strong{display:block;font-size:15px;margin-bottom:6px}
+.preview-item small{color:var(--muted);line-height:1.4;display:block}
+.preview-footer{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  padding:16px 20px;
+  background:#f8fafc;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+.empty{
+  padding:26px;
+  border:1px dashed #cbd5e1;
+  border-radius:22px;
+  text-align:center;
+  color:var(--muted);
+  background:white;
+}
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:24px 10px;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .qr-card{max-width:320px}
+  .controls{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .preview-list{grid-template-columns:repeat(2,1fr)}
+  .panel-head{grid-template-columns:1fr}
+  .actions{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .app{padding:12px}
+  .hero{border-radius:26px;padding:18px}
+  .brand{align-items:flex-start}
+  .logo-box{width:52px;height:52px;border-radius:18px}
+  .contact-pill{width:100%;text-align:center}
+  .product-grid,.preview-list{grid-template-columns:1fr}
+  .preview-cover{grid-template-columns:1fr}
+  .preview-qr{width:140px;height:140px}
+}
+@media print{
+  body{background:white}
+  .panel:first-of-type,.actions,.controls,.category-tabs,.check-area,.no-print,footer{display:none!important}
+  .app{max-width:none;padding:0}
+  .hero{display:none}
+  .panel{margin:0;border:0;box-shadow:none}
+  .catalog-preview{padding:0}
+  .preview-card{border:0;border-radius:0;box-shadow:none}
+  .preview-list{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="brand">
+          <div class="logo-box">A+</div>
+          <div>
+            <h1>Alkes PKY</h1>
+            <p class="subtitle">Sahabat Kesehatan Anda</p>
+          </div>
+        </div>
+
+        <div class="hero-badge">✨ Pembuat Katalog Produk Otomatis</div>
+        <h2>Pilih barang, lalu katalog modern siap dicetak atau disimpan PDF.</h2>
+        <p class="hero-text">
+          Cocok untuk katalog tensimeter, termometer, nursing kit, alat cek gula, set rawat luka, dan produk kesehatan lain.
+        </p>
+
+        <div class="contact-row">
+          <a class="contact-pill" href="https://wa.me/6282253124745">WA 0822-5312-4745</a>
+          <a class="contact-pill" href="https://www.instagram.com/alkes_pky/">Instagram @Alkes_pky</a>
+          <a class="contact-pill" href="https://www.alkespky.store">www.alkespky.store</a>
+        </div>
+      </div>
+
+      <div class="qr-card">
+        <img src="./qr-instagram-alkes-pky.png" alt="QR Instagram Alkes PKY">
+        <strong>@Alkes_pky</strong>
+        <span>Scan untuk melihat Instagram</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel no-print">
+    <div class="panel-head">
+      <div>
+        <h3>Atur Isi Katalog</h3>
+        <p>Pilih template cepat atau centang barang satu per satu.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-soft" onclick="clearAll()">Kosongkan</button>
+        <button class="btn btn-primary" onclick="window.print()">Cetak / Simpan PDF</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input id="catalogTitle" class="input" value="Katalog Alat Kesehatan Alkes PKY" placeholder="Judul katalog">
+      <select id="quickCatalog" class="select" onchange="applyQuickCatalog()">
+        <option value="">Pilih katalog cepat...</option>
+        <option value="tensimeter">Katalog Tensimeter</option>
+        <option value="termometer">Katalog Termometer</option>
+        <option value="lengkap">Katalog Lengkap</option>
+        <option value="nursing">Katalog Nursing Kit & Praktik</option>
+        <option value="rawatluka">Katalog Set Rawat Luka</option>
+      </select>
+      <select id="layoutSelect" class="select" onchange="renderPreview()">
+        <option value="3">Layout 3 kolom</option>
+        <option value="2">Layout 2 kolom</option>
+        <option value="1">Layout 1 kolom</option>
+      </select>
+    </div>
+
+    <div class="check-area">
+      <div class="category-tabs" id="categoryTabs"></div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <h3>Preview Katalog</h3>
+        <p>Bagian ini yang akan masuk saat dicetak atau disimpan sebagai PDF.</p>
+      </div>
+      <div class="actions no-print">
+        <button class="btn btn-primary" onclick="window.print()">Simpan PDF</button>
+      </div>
+    </div>
+
+    <div class="catalog-preview">
+      <div class="preview-card" id="catalogPreview"></div>
+    </div>
+  </section>
+
+  <footer>© 2025–2026 Alkes PKY • Sahabat Kesehatan Anda</footer>
+</div>
+
+<script>
+const products = [
+  {id:"tensi-omron", name:"Tensimeter Digital Omron", cat:"Tensimeter", desc:"Tensimeter digital praktis untuk pemantauan tekanan darah harian.", price:"Harga menyesuaikan stok"},
+  {id:"tensi-sinocare", name:"Tensimeter Digital Sinocare BA-801", cat:"Tensimeter", desc:"Layar jelas, mudah digunakan, cocok untuk rumah dan klinik.", price:"Harga menyesuaikan stok"},
+  {id:"tensi-manual", name:"Tensimeter Manual + Stetoskop", cat:"Tensimeter", desc:"Paket pemeriksaan tekanan darah untuk nakes dan mahasiswa kesehatan.", price:"Harga menyesuaikan stok"},
+  {id:"termogun", name:"Thermogun Digital", cat:"Termometer", desc:"Pengukuran suhu cepat tanpa kontak, cocok untuk rumah, sekolah, dan klinik.", price:"Harga menyesuaikan stok"},
+  {id:"termometer-digital", name:"Termometer Digital", cat:"Termometer", desc:"Termometer sederhana, ringan, dan mudah dibawa.", price:"Harga menyesuaikan stok"},
+  {id:"oksimeter", name:"Pulse Oximeter", cat:"Monitor", desc:"Untuk memantau saturasi oksigen dan nadi secara praktis.", price:"Harga menyesuaikan stok"},
+  {id:"nebulizer-portable", name:"Nebulizer Portable", cat:"Nebulizer", desc:"Nebulizer ringkas, mudah dibawa, cocok untuk penggunaan keluarga.", price:"Harga menyesuaikan stok"},
+  {id:"nebulizer-omron", name:"Nebulizer Omron NE-C28", cat:"Nebulizer", desc:"Nebulizer kompresor untuk terapi uap yang stabil dan efisien.", price:"Harga menyesuaikan stok"},
+  {id:"glukosa", name:"Alat Cek Gula Darah", cat:"Cek Darah", desc:"Paket cek gula darah praktis untuk pemantauan mandiri.", price:"Harga menyesuaikan stok"},
+  {id:"strip-gula", name:"Strip Gula Darah", cat:"Cek Darah", desc:"Strip untuk pemeriksaan gula darah sesuai merek alat.", price:"Harga menyesuaikan stok"},
+  {id:"kolesterol", name:"Strip Kolesterol", cat:"Cek Darah", desc:"Untuk pemeriksaan kolesterol sesuai alat yang kompatibel.", price:"Harga menyesuaikan stok"},
+  {id:"asam-urat", name:"Strip Asam Urat", cat:"Cek Darah", desc:"Untuk pemantauan kadar asam urat secara praktis.", price:"Harga menyesuaikan stok"},
+  {id:"nursing-kit", name:"Nursing Kit", cat:"Praktik", desc:"Paket perlengkapan praktik mahasiswa kesehatan dan nakes.", price:"Harga menyesuaikan stok"},
+  {id:"handscoon", name:"Sarung Tangan Medis", cat:"Praktik", desc:"Tersedia pilihan latex/nitrile sesuai kebutuhan tindakan.", price:"Harga menyesuaikan stok"},
+  {id:"apron", name:"Apron / Clemek Medis", cat:"Praktik", desc:"Perlindungan tambahan saat praktik, tindakan, dan kegiatan kebersihan.", price:"Harga menyesuaikan stok"},
+  {id:"alkohol", name:"Alkohol 70%", cat:"Rawat Luka", desc:"Cairan antiseptik untuk kebutuhan perawatan dan kebersihan alat.", price:"Harga menyesuaikan stok"},
+  {id:"povidone", name:"Povidone Iodine", cat:"Rawat Luka", desc:"Antiseptik kulit untuk kebutuhan perawatan luka.", price:"Harga menyesuaikan stok"},
+  {id:"kasa", name:"Kasa Steril / Hidrofil", cat:"Rawat Luka", desc:"Kasa untuk perawatan luka dan kebutuhan tindakan.", price:"Harga menyesuaikan stok"},
+  {id:"plester", name:"Plester Medis", cat:"Rawat Luka", desc:"Plester untuk fiksasi balutan dan kebutuhan perawatan.", price:"Harga menyesuaikan stok"},
+  {id:"syringe", name:"Spuit / Syringe", cat:"Tindakan", desc:"Tersedia berbagai ukuran sesuai kebutuhan tindakan.", price:"Harga menyesuaikan stok"},
+  {id:"iv-cath", name:"IV Catheter", cat:"Tindakan", desc:"Tersedia ukuran 20G dan 22G sesuai stok.", price:"Harga menyesuaikan stok"},
+  {id:"urin-bag", name:"Urin Bag", cat:"Tindakan", desc:"Kantong urin untuk kebutuhan perawatan pasien.", price:"Harga menyesuaikan stok"},
+  {id:"nasal", name:"Nasal Cannula Dewasa", cat:"Tindakan", desc:"Alat bantu pemberian oksigen untuk pasien dewasa.", price:"Harga menyesuaikan stok"},
+  {id:"arm-sling", name:"Arm Sling", cat:"Penunjang", desc:"Penyangga lengan untuk cedera atau pemulihan.", price:"Harga menyesuaikan stok"},
+  {id:"kasur-decubitus", name:"Kasur Decubitus", cat:"Penunjang", desc:"Kasur angin untuk membantu mengurangi risiko luka tekan.", price:"Harga menyesuaikan stok"}
+];
+
+const quickMap = {
+  tensimeter:["tensi-omron","tensi-sinocare","tensi-manual","oksimeter","termometer-digital"],
+  termometer:["termogun","termometer-digital","oksimeter"],
+  lengkap:products.map(p=>p.id),
+  nursing:["nursing-kit","handscoon","apron","tensi-manual","termometer-digital","oksimeter","syringe","iv-cath"],
+  rawatluka:["alkohol","povidone","kasa","plester","handscoon","syringe"]
+};
+
+let selected = new Set(["tensi-omron","tensi-sinocare","termogun","oksimeter","nursing-kit","handscoon"]);
+let activeCat = "Semua";
+
+const cats = ["Semua", ...new Set(products.map(p=>p.cat))];
+
+function renderCategories(){
+  const wrap = document.getElementById("categoryTabs");
+  wrap.innerHTML = cats.map(cat => `
+    <label class="tab">
+      <input type="radio" name="cat" ${activeCat===cat?"checked":""} onchange="activeCat='${cat}'; renderProducts()">
+      ${cat}
+    </label>
+  `).join("");
+}
+
+function renderProducts(){
+  const grid = document.getElementById("productGrid");
+  const list = activeCat==="Semua" ? products : products.filter(p=>p.cat===activeCat);
+  grid.innerHTML = list.map(p=>`
+    <div class="product-card ${selected.has(p.id) ? "selected" : ""}">
+      <div class="product-top">
+        <span class="tag">${p.cat}</span>
+        <input type="checkbox" ${selected.has(p.id) ? "checked" : ""} onchange="toggleProduct('${p.id}', this.checked)">
+      </div>
+      <h4>${p.name}</h4>
+      <p>${p.desc}</p>
+      <div class="price">${p.price}</div>
+    </div>
+  `).join("");
+  renderPreview();
+}
+
+function toggleProduct(id, checked){
+  checked ? selected.add(id) : selected.delete(id);
+  renderProducts();
+}
+
+function applyQuickCatalog(){
+  const val = document.getElementById("quickCatalog").value;
+  if(!val) return;
+  selected = new Set(quickMap[val]);
+  const titleMap = {
+    tensimeter:"Katalog Tensimeter Alkes PKY",
+    termometer:"Katalog Termometer Alkes PKY",
+    lengkap:"Katalog Lengkap Alkes PKY",
+    nursing:"Katalog Nursing Kit & Perlengkapan Praktik",
+    rawatluka:"Katalog Set Rawat Luka Alkes PKY"
+  };
+  document.getElementById("catalogTitle").value = titleMap[val];
+  renderProducts();
+}
+
+function clearAll(){
+  selected.clear();
+  document.getElementById("quickCatalog").value = "";
+  renderProducts();
+}
+
+function renderPreview(){
+  const title = document.getElementById("catalogTitle").value || "Katalog Alkes PKY";
+  const layout = document.getElementById("layoutSelect").value || "3";
+  const items = products.filter(p=>selected.has(p.id));
+
+  const preview = document.getElementById("catalogPreview");
+  const listHtml = items.length ? items.map(p=>`
+    <div class="preview-item">
+      <span class="tag">${p.cat}</span>
+      <strong>${p.name}</strong>
+      <small>${p.desc}</small>
+      <div class="price">${p.price}</div>
+    </div>
+  `).join("") : `<div class="empty">Belum ada barang dipilih. Centang produk untuk membuat katalog.</div>`;
+
+  preview.innerHTML = `
+    <div class="preview-cover">
+      <div>
+        <h2>${title}</h2>
+        <p>Alat kesehatan pilihan untuk rumah, mahasiswa kesehatan, klinik, dan tenaga kesehatan.</p>
+      </div>
+      <div class="preview-qr">
+        <img src="./qr-instagram-alkes-pky.png" alt="QR Instagram">
+      </div>
+    </div>
+
+    <div class="preview-list" style="grid-template-columns:repeat(${layout},1fr)">
+      ${listHtml}
+    </div>
+
+    <div class="preview-footer">
+      <span>Instagram: @Alkes_pky</span>
+      <span>WA: 0822-5312-4745</span>
+      <span>Web: www.alkespky.store</span>
+    </div>
+  `;
+}
+
+document.getElementById("catalogTitle").addEventListener("input", renderPreview);
+renderCategories();
+renderProducts();
+</script>
+</body>
+</html>
