@@ -21,6 +21,111 @@
     align-items:start;}.qr-row{justify-content:flex-start;flex-wrap:wrap}.products-area{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:560px){.app{padding:10px}.sheet-inner{padding:24px 18px}.sheet-logo{width:92px;height:92px}.brand-title h1{font-size:34px}.brand-title p{font-size:17px}.catalog-pill{font-size:22px}.products-area{grid-template-columns:1fr!important;margin-top:45px}.product-grid{grid-template-columns:1fr}}
 @media print{@page{size:A4;margin:0}body{background:white}.no-print{display:none!important}.app{max-width:none;padding:0}.panel{margin:0;border-radius:0;box-shadow:none}.catalog-sheet{width:210mm;min-height:297mm;border-radius:0}.sheet-inner{padding:9mm 10mm}.sheet-logo{width:26mm;height:26mm}.brand-title h1{font-size:38px}.brand-title p{font-size:18px;margin:6px 0 8px}.catalog-pill{font-size:24px;padding:6px 18px;border-radius:8px}.qr-box{width:31mm;height:41mm;border-radius:7mm;padding:2mm}.qr-box img{width:25mm;height:25mm}.qr-box .qr-label{font-size:12px}.qr-box.ig .qr-label{font-size:10px}.products-area{margin-top:48mm;gap:4mm;grid-template-columns:repeat(4,1fr)!important}.catalog-item{padding:2.5mm;border-radius:5mm}.catalog-item img{border-radius:4mm}.catalog-item strong{font-size:10.5px}.catalog-item .price{font-size:9.5px;padding:3px 7px}.pattern{width:70mm;height:70mm}}
+
+/* ===== KATALOG ALKES PKY — VISUAL REFINEMENT ===== */
+:root{
+  --blue:#1686ad;--blue2:#087da6;--text:#172b3a;--muted:#667987;
+  --line:#dce8ee;--soft:#f2f8fb;--accent:#e8f5fa;
+}
+body{background:#f3f7fa;color:var(--text)}
+.app{max-width:1240px;padding:24px}
+.panel{border:1px solid #e5edf2;border-radius:22px;box-shadow:0 14px 38px rgba(22,52,70,.07)}
+.no-print{padding:22px}
+.toolbar{grid-template-columns:minmax(180px,1.3fr) minmax(180px,1fr) minmax(150px,.8fr) auto;gap:12px}
+.input,.select{min-height:46px;border:1px solid #d9e5eb;border-radius:12px;background:#fff;color:#243746;transition:border-color .2s,box-shadow .2s}
+.input:focus,.select:focus{border-color:#1686ad;box-shadow:0 0 0 3px rgba(22,134,173,.12)}
+.btn{min-height:44px;border-radius:12px;padding:11px 16px;transition:transform .18s,box-shadow .18s,background .18s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(135deg,#1596bd,#087da6);box-shadow:0 6px 14px rgba(8,125,166,.2)}
+.btn-soft{background:#eef6f9;color:#24566a;border:1px solid #e0edf2}
+.setting-row{gap:9px;margin-top:16px}
+.check{border-radius:12px;border-color:#e1ebf0;background:#f9fcfd;padding:10px 13px;color:#425968}
+.status{margin-top:14px;padding:10px 13px;border-radius:11px;background:#f2f8fa;color:#527080}
+.selector{border-color:#e5edf2}
+.selector-toolbar{grid-template-columns:minmax(180px,1fr) minmax(170px,.7fr) auto auto;gap:10px}
+.product-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;max-height:560px;padding:2px}
+.product-card{border:1px solid #e3edf1;border-radius:16px;padding:11px;transition:border-color .18s,box-shadow .18s,transform .18s}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(25,65,85,.07)}
+.product-card.selected{border-color:#1686ad;background:#f1f9fc;box-shadow:0 0 0 1px rgba(22,134,173,.12)}
+.product-card img{border-radius:12px;background:#f5f8fa}
+.product-card h4{font-size:13px;line-height:1.4;color:#233b4a;min-height:36px}
+.price-small{color:#087da6}
+.catalog-sheet{min-height:1120px;border-radius:18px;background:#fff}
+.sheet-inner{padding:34px 38px 40px}
+.sheet-header{grid-template-columns:104px minmax(0,1fr) auto;gap:20px;align-items:center;padding-bottom:22px;border-bottom:1px solid #e8eff3}
+.sheet-logo{width:104px;height:104px;border-radius:22px;object-fit:contain;padding:5px;background:#fff;box-shadow:0 5px 18px rgba(21,73,98,.10)}
+.brand-title{padding-top:0}
+.brand-title h1{font-size:clamp(34px,4vw,48px);letter-spacing:-1.8px;color:#087da6;text-shadow:none}
+.brand-title p{margin:7px 0 13px;font-size:17px;color:#647987;font-weight:600}
+.catalog-pill{background:#eaf5f9;color:#087da6;padding:8px 16px;border-radius:9px;font-size:21px;letter-spacing:.2px}
+.qr-row{gap:9px}
+.qr-box{width:104px;height:auto;min-height:132px;border:1px solid #dce9ef;border-radius:14px;padding:8px;background:#fff}
+.qr-box img{width:82px;height:82px;object-fit:contain}
+.qr-box .qr-label{font-size:10px;white-space:normal;color:#536b79}
+.qr-box.ig .qr-label{font-size:10px;color:#087da6}
+.products-area{margin-top:24px;gap:14px;align-content:start}
+.catalog-item{border:1px solid #e5edf1;border-radius:15px;padding:10px;background:#fff;box-shadow:0 4px 12px rgba(22,52,70,.045)}
+.catalog-item img{border:0;border-radius:11px;background:#f6f9fa}
+.catalog-item strong{font-size:13px;line-height:1.4;color:#243b49;min-height:36px}
+.catalog-item .price{background:#eaf5f9;color:#087da6;border-radius:8px;font-size:12px;padding:6px 9px}
+.pattern{opacity:.10}
+.empty{color:#708492;background:#f9fbfc;border-color:#dbe7ed}
+@media(max-width:960px){
+ .app{padding:14px}
+ .toolbar,.selector-toolbar{grid-template-columns:1fr 1fr}
+ .toolbar .btn-primary{grid-column:1/-1}
+ .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .sheet-header{grid-template-columns:76px minmax(0,1fr);gap:14px}
+ .sheet-logo{width:76px;height:76px}
+ .qr-row{grid-column:1/-1;justify-content:flex-end}
+ .products-area{grid-template-columns:repeat(3,1fr)!important;margin-top:22px}
+}
+@media(max-width:600px){
+ .app{padding:9px}
+ .no-print{padding:14px}
+ .toolbar,.selector-toolbar{grid-template-columns:1fr}
+ .toolbar .btn-primary{grid-column:auto}
+ .setting-row{display:grid;grid-template-columns:1fr 1fr}
+ .setting-row .check{justify-content:flex-start}
+ .setting-row .btn{width:100%;font-size:12px;padding:10px 8px}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .product-card{padding:8px}
+ .sheet-inner{padding:18px 14px}
+ .sheet-header{grid-template-columns:58px minmax(0,1fr);gap:10px}
+ .sheet-logo{width:58px;height:58px;border-radius:14px}
+ .brand-title h1{font-size:27px;letter-spacing:-1px}
+ .brand-title p{font-size:12px;margin:5px 0 8px}
+ .catalog-pill{font-size:16px;padding:6px 10px}
+ .qr-row{justify-content:flex-start;gap:8px}
+ .qr-box{width:88px;min-height:110px;padding:6px}
+ .qr-box img{width:70px;height:70px}
+ .products-area{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px;margin-top:18px}
+ .catalog-item{padding:7px;border-radius:12px}
+ .catalog-item strong{font-size:11px;min-height:32px}
+ .catalog-item .price{font-size:10px;padding:5px 7px}
+}
+@media print{
+ body{background:#fff}
+ .app{padding:0}
+ .panel{border:0;box-shadow:none}
+ .catalog-sheet{min-height:297mm;width:210mm}
+ .sheet-inner{padding:10mm 11mm}
+ .sheet-header{grid-template-columns:25mm 1fr auto;gap:5mm;padding-bottom:5mm}
+ .sheet-logo{width:25mm;height:25mm;border-radius:5mm}
+ .brand-title h1{font-size:34px}
+ .brand-title p{font-size:13px;margin:4px 0 7px}
+ .catalog-pill{font-size:18px;padding:5px 12px}
+ .qr-box{width:25mm;min-height:31mm;border-radius:3mm;padding:1.5mm}
+ .qr-box img{width:20mm;height:20mm}
+ .qr-box .qr-label,.qr-box.ig .qr-label{font-size:8px}
+ .products-area{margin-top:9mm;gap:3mm;grid-template-columns:repeat(4,1fr)!important}
+ .catalog-item{padding:2mm;border-radius:3mm;box-shadow:none}
+ .catalog-item img{border-radius:2mm}
+ .catalog-item strong{font-size:9px;margin-top:2mm}
+ .catalog-item .price{font-size:8px;padding:1.2mm 2mm}
+ .pattern{opacity:.08}
+}
+
 </style></head><body><div class="app">
 <section class="panel no-print"><div class="toolbar"><input id="catalogTitle" class="input" value="Catalog 2026" placeholder="Judul katalog"><select id="quickCatalog" class="select" onchange="applyQuickCatalog()"><option value="">Pilih katalog cepat...</option><option value="tensimeter">Katalog Tensimeter</option><option value="termometer">Katalog Termometer</option><option value="lengkap">Katalog Lengkap</option><option value="nursing">Katalog Nursing Kit</option><option value="rawatluka">Katalog Rawat Luka</option></select><select id="layoutSelect" class="select" onchange="renderPreview()"><option value="4">Layout 4 kolom</option><option value="3">Layout 3 kolom</option><option value="2">Layout 2 kolom</option></select><button class="btn btn-primary" onclick="window.print()">Cetak / Simpan PDF</button></div><div class="setting-row"><label class="check"><input type="checkbox" id="showPrice" checked onchange="renderPreview()"> Tampilkan harga</label><label class="check"><input type="checkbox" id="onlyAvailable" checked onchange="renderProductSelector(); renderPreview()"> Hanya stok tersedia</label><button class="btn btn-soft" onclick="loadProducts()">Refresh Database</button><button class="btn btn-soft" onclick="toggleSelector()">Tampilkan Pilihan Barang</button><button class="btn btn-soft" onclick="selectAllVisible()">Pilih semua tampil</button><button class="btn btn-soft" onclick="clearAll()">Kosongkan</button></div><div class="status" id="statusText">Memuat produk dari database...</div><div class="selector" id="selectorBox"><div class="selector-toolbar"><input id="searchBox" class="input" placeholder="Cari nama produk..." oninput="renderProductSelector()"><select id="categoryFilter" class="select" onchange="renderProductSelector()"><option value="">Semua kategori</option></select><button class="btn btn-soft" onclick="selectAllVisible()">Pilih tampil</button><button class="btn btn-soft" onclick="toggleSelector()">Sembunyikan</button></div><div class="product-grid" id="productGrid"></div></div></section>
 <section class="panel"><div class="catalog-sheet" id="catalogPreview"></div></section></div>
