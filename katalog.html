@@ -126,6 +126,13 @@ body{background:#f3f7fa;color:var(--text)}
  .pattern{opacity:.08}
 }
 
+
+/* Harga dibuat lebih menonjol dan mudah dibaca */
+.catalog-item .price{font-size:16px;padding:8px 13px;font-weight:900;letter-spacing:.1px}
+.price-small{font-size:14px}
+@media(max-width:600px){.catalog-item .price{font-size:14px;padding:7px 10px}.price-small{font-size:13px}}
+@media print{.catalog-item .price{font-size:11px;padding:2mm 3mm}}
+
 </style></head><body><div class="app">
 <section class="panel no-print"><div class="toolbar"><input id="catalogTitle" class="input" value="Catalog 2026" placeholder="Judul katalog"><select id="quickCatalog" class="select" onchange="applyQuickCatalog()"><option value="">Pilih katalog cepat...</option><option value="tensimeter">Katalog Tensimeter</option><option value="termometer">Katalog Termometer</option><option value="lengkap">Katalog Lengkap</option><option value="nursing">Katalog Nursing Kit</option><option value="rawatluka">Katalog Rawat Luka</option></select><select id="layoutSelect" class="select" onchange="renderPreview()"><option value="4">Layout 4 kolom</option><option value="3">Layout 3 kolom</option><option value="2">Layout 2 kolom</option></select><button class="btn btn-primary" onclick="window.print()">Cetak / Simpan PDF</button></div><div class="setting-row"><label class="check"><input type="checkbox" id="showPrice" checked onchange="renderPreview()"> Tampilkan harga</label><label class="check"><input type="checkbox" id="onlyAvailable" checked onchange="renderProductSelector(); renderPreview()"> Hanya stok tersedia</label><button class="btn btn-soft" onclick="loadProducts()">Refresh Database</button><button class="btn btn-soft" onclick="toggleSelector()">Tampilkan Pilihan Barang</button><button class="btn btn-soft" onclick="selectAllVisible()">Pilih semua tampil</button><button class="btn btn-soft" onclick="clearAll()">Kosongkan</button></div><div class="status" id="statusText">Memuat produk dari database...</div><div class="selector" id="selectorBox"><div class="selector-toolbar"><input id="searchBox" class="input" placeholder="Cari nama produk..." oninput="renderProductSelector()"><select id="categoryFilter" class="select" onchange="renderProductSelector()"><option value="">Semua kategori</option></select><button class="btn btn-soft" onclick="selectAllVisible()">Pilih tampil</button><button class="btn btn-soft" onclick="toggleSelector()">Sembunyikan</button></div><div class="product-grid" id="productGrid"></div></div></section>
 <section class="panel"><div class="catalog-sheet" id="catalogPreview"></div></section></div>
